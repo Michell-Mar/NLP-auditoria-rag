@@ -1,0 +1,6 @@
+.env
+rag_nlp_aviso/
+__pycache__/
+*.pyc
+.venv/
+venv/
