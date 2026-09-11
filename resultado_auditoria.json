@@ -1,6 +1,6 @@
 {
   "documento_auditado": "aviso_privacidad.pdf",
-  "fecha_auditoria": "2026-09-06T17:39:08",
+  "fecha_auditoria": "2026-09-11T10:16:11",
   "resumen": {
     "veredicto_global": "CUMPLE PARCIALMENTE",
     "porcentaje_cumplimiento": 77.8,
@@ -9,7 +9,13 @@
       "Cumple parcial": 4,
       "No cumple": 0
     },
-    "reglas_evaluadas": 9
+    "reglas_evaluadas": 9,
+    "reglas_revisadas_por_humano": 0,
+    "reglas_ajustadas_por_humano": 0,
+    "aviso_desactualizado": true,
+    "notas_desactualizacion": [
+      "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+    ]
   },
   "detalle": [
     {
@@ -20,8 +26,10 @@
         "cumple": "Cumple total",
         "evidencia_encontrada": "Centros Culturales de México, A.C., propietaria de la Universidad Panamericana Campus México (en lo sucesivo “UP México”), con domicilio en la calle Jerez No. 10, Col. Insurgentes Mixcoac, Alcaldía Benito Juárez, C.P. 03920, Ciudad de México",
         "elementos_faltantes": "Ninguno",
-        "justificacion": "El aviso de privacidad proporciona tanto la identidad del responsable ('Centros Culturales de México, A.C.') como su domicilio completo, cumpliendo con lo requerido por el Art. 16 fr. I de la LFPDPPP y el Art. 27 fr. I del Reglamento."
-      }
+        "justificacion": "El aviso de privacidad proporciona tanto la identidad del responsable ('Centros Culturales de México, A.C.') como su domicilio completo, cumpliendo con lo requerido por el Art. 16 fr. I de la LFPDPPP y el Art. 27 fr. I del Reglamento.",
+        "nota_desactualizacion": "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + Secretaría Anticorrupción y Buen Gobierno"
+      },
+      "revision": null
     },
     {
       "id": "datos_recabados",
@@ -31,8 +39,10 @@
         "cumple": "Cumple total",
         "evidencia_encontrada": "Para llevar a cabo las finalidades descritas en el presente aviso de privacidad, utilizaremos las siguientes categorías de datos personales: Identificación y contacto, Laborales, Académicos, Financieros y patrimoniales, Datos personales considerados como sensibles: Religión, salud, discapacidades y lengua indígena.",
         "elementos_faltantes": "Ninguno",
-        "justificacion": "El aviso de privacidad proporciona un listado claro de las categorías de datos personales que serán sometidos a tratamiento, cumpliendo con lo requerido por el Art. 27 fr. II del Reglamento en relación con el Art. 16 de la LFPDPPP."
-      }
+        "justificacion": "El aviso de privacidad indica claramente las categorías de datos personales que se someterán a tratamiento, cumpliendo con lo establecido en el Art. 27 fr. II del Reglamento en relación con el Art. 16 de la LFPDPPP.",
+        "nota_desactualizacion": "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     },
     {
       "id": "datos_sensibles",
@@ -41,9 +51,11 @@
       "dictamen": {
         "cumple": "Cumple parcial",
         "evidencia_encontrada": "Le informamos que previamente a que recabemos sus datos financieros, patrimoniales o sensibles, le solicitaremos nos otorgue su consentimiento expreso y por escrito del presente aviso de privacidad integral.",
-        "elementos_faltantes": "No se especifica el mecanismo exacto para recabar el consentimiento expreso y por escrito.",
-        "justificacion": "El aviso de privacidad menciona que se solicitará el consentimiento expreso y por escrito para el tratamiento de datos sensibles, cumpliendo con el requisito del Art. 9 LFPDPPP. Sin embargo, no se detalla el procedimiento específico para obtener dicho consentimiento, lo cual es necesario para cumplir completamente con la normativa."
-      }
+        "elementos_faltantes": "No se señala expresamente la circunstancia de tratar datos personales sensibles en el contexto del aviso.",
+        "justificacion": "El aviso menciona que se solicitará el consentimiento expreso y por escrito para datos sensibles, pero no señala expresamente la circunstancia de que se tratan datos personales sensibles, como lo exige la normativa.",
+        "nota_desactualizacion": "Ninguna"
+      },
+      "revision": null
     },
     {
       "id": "finalidades",
@@ -53,8 +65,10 @@
         "cumple": "Cumple total",
         "evidencia_encontrada": "Su información personal será utilizada para las siguientes finalidades principales... Adicionalmente, su información personal será utilizada con las siguientes finalidades secundarias...",
         "elementos_faltantes": "Ninguno",
-        "justificacion": "El aviso de privacidad distingue claramente entre las finalidades principales y secundarias del tratamiento de los datos personales, cumpliendo con lo establecido en el Art. 16 fr. II de la LFPDPPP y los Arts. 27 fr. III y 40 del Reglamento."
-      }
+        "justificacion": "El aviso de privacidad distingue claramente entre las finalidades principales y secundarias del tratamiento de los datos personales, cumpliendo con lo establecido en el Art. 16 fr. II de la LFPDPPP y los Arts. 27 fr. III y 40 del Reglamento.",
+        "nota_desactualizacion": "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     },
     {
       "id": "limitar_uso_divulgacion",
@@ -64,8 +78,10 @@
         "cumple": "Cumple total",
         "evidencia_encontrada": "Si usted no desea que sus datos personales sean tratados para las finalidades secundarias señaladas, puede negarnos su consentimiento desde este momento enviando un correo electrónico a nuestro líder de privacidad...",
         "elementos_faltantes": "Ninguno",
-        "justificacion": "El aviso de privacidad ofrece un mecanismo claro para que el titular limite el uso o divulgación de sus datos personales para finalidades secundarias, permitiendo enviar un correo electrónico para manifestar su negativa. Además, se menciona la posibilidad de inscribirse en un 'Listado de Exclusión Publicitaria'. Esto cumple con los requisitos del Art. 16 fr. III LFPDPPP y Art. 27 fr. IV del Reglamento."
-      }
+        "justificacion": "El aviso de privacidad ofrece un mecanismo claro para que el titular limite el uso o divulgación de sus datos personales para finalidades secundarias, mediante el envío de un correo electrónico al líder de privacidad. Además, se menciona la posibilidad de inscribirse en un 'Listado de Exclusión Publicitaria'. Esto cumple con lo establecido en el Art. 16 fr. III de la LFPDPPP y el Art. 27 fr. IV del Reglamento.",
+        "nota_desactualizacion": "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     },
     {
       "id": "derechos_arco",
@@ -73,10 +89,12 @@
       "referencia_legal": "Art. 16 fr. IV y Art. 22-24 LFPDPPP",
       "dictamen": {
         "cumple": "Cumple parcial",
-        "evidencia_encontrada": "Para conocer el procedimiento, requisitos y plazos para el ejercicio de los derechos ARCO, le agradeceremos se ponga en contacto con nuestro líder de privacidad de la UP México, a la mencionada dirección de correo electrónico.",
-        "elementos_faltantes": "Descripción detallada de los procedimientos específicos para ejercer los derechos ARCO.",
-        "justificacion": "El aviso de privacidad menciona que se puede contactar al líder de privacidad para conocer el procedimiento para ejercer los derechos ARCO, pero no detalla los medios y procedimientos específicos, como formularios, plazos o pasos a seguir, lo cual es requerido por la LFPDPPP."
-      }
+        "evidencia_encontrada": "Para conocer el procedimiento, requisitos y plazos para el ejercicio de los derechos ARCO, así como del derecho de revocación, le agradeceremos se ponga en contacto con nuestro líder de privacidad de la UP México, a la mencionada dirección de correo electrónico.",
+        "elementos_faltantes": "No se detallan los procedimientos específicos para ejercer los derechos ARCO.",
+        "justificacion": "El aviso de privacidad menciona que se puede contactar al líder de privacidad para conocer el procedimiento, pero no especifica los medios y procedimientos concretos para ejercer los derechos ARCO, lo cual es requerido por la LFPDPPP.",
+        "nota_desactualizacion": "le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     },
     {
       "id": "cambios_aviso",
@@ -85,9 +103,11 @@
       "dictamen": {
         "cumple": "Cumple parcial",
         "evidencia_encontrada": "La UP México podrá modificar y/o actualizar el presente aviso de privacidad, informándole sobre cualquier modificación o actualización a través de nuestra página de Internet www.up.edu.mx",
-        "elementos_faltantes": "No se especifica el procedimiento detallado para comunicar los cambios.",
-        "justificacion": "El aviso de privacidad menciona el medio (página de Internet) por el cual se comunicarán los cambios, pero no detalla el procedimiento específico para dicha comunicación, como lo requiere el Art. 16 fr. VI LFPDPPP y el Art. 18 del Reglamento."
-      }
+        "elementos_faltantes": "No se menciona el procedimiento específico para comunicar los cambios.",
+        "justificacion": "El aviso de privacidad menciona el medio (página de Internet) para comunicar cambios, pero no detalla el procedimiento específico para hacerlo, lo cual es requerido por la normativa.",
+        "nota_desactualizacion": "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     },
     {
       "id": "transferencias",
@@ -95,10 +115,12 @@
       "referencia_legal": "Art. 16 fr. V y Art. 36-37 LFPDPPP; Art. 68 Reglamento",
       "dictamen": {
         "cumple": "Cumple total",
-        "evidencia_encontrada": "Sus datos personales podrán ser transferidos a las siguientes personas físicas o morales, en cuyos casos no requerimos nos otorgue consentimiento: [...] Asimismo, sus datos personales (que no sean financieros, patrimoniales o sensibles) podrán ser transferidos a las siguientes personas físicas o morales, en cuyos casos sí requerimos que nos otorgue su consentimiento: [...] Usted puede manifestar su negativa para las trasferencias de las que requerimos su consentimiento, enviando un correo electrónico a nuestro líder de privacidad.",
+        "evidencia_encontrada": "Sus datos personales podrán ser transferidos a las siguientes personas físicas o morales, en cuyos casos no requerimos nos otorgue consentimiento...",
         "elementos_faltantes": "Ninguno",
-        "justificacion": "El aviso de privacidad menciona las transferencias de datos a terceros, identifica a los destinatarios, especifica la finalidad de dichas transferencias y proporciona una cláusula para que el titular pueda negar su consentimiento para aquellas transferencias que lo requieren, cumpliendo así con los requisitos establecidos en los artículos 16 fr. V, 36-37 de la LFPDPPP y el artículo 68 del Reglamento."
-      }
+        "justificacion": "El aviso de privacidad menciona las transferencias de datos a terceros, identifica a los destinatarios y especifica la finalidad de dichas transferencias. Además, incluye una cláusula para que el titular pueda manifestar su negativa a las transferencias que requieren consentimiento.",
+        "nota_desactualizacion": "El Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     },
     {
       "id": "revocacion_consentimiento",
@@ -108,8 +130,10 @@
         "cumple": "Cumple parcial",
         "evidencia_encontrada": "Para conocer el procedimiento, requisitos y plazos para el ejercicio de los derechos ARCO, así como del derecho de revocación, le agradeceremos se ponga en contacto con nuestro líder de privacidad de la UP México, a la mencionada dirección de correo electrónico.",
         "elementos_faltantes": "No se detallan los mecanismos específicos ni el procedimiento completo para la revocación del consentimiento.",
-        "justificacion": "El aviso menciona que el titular puede contactar al líder de privacidad para conocer el procedimiento de revocación, pero no detalla los mecanismos ni el procedimiento específico, lo cual es requerido por el Art. 8 y Art. 16 fr. IV LFPDPPP y Art. 21 del Reglamento."
-      }
+        "justificacion": "El aviso menciona que el titular puede revocar su consentimiento y que debe contactar al líder de privacidad para conocer el procedimiento, pero no detalla los mecanismos ni el procedimiento específico para hacerlo, lo cual es requerido por la normativa.",
+        "nota_desactualizacion": "Le informamos que el Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia de protección de datos personales. + La autoridad vigente es la Secretaría Anticorrupción y Buen Gobierno."
+      },
+      "revision": null
     }
   ]
 }
