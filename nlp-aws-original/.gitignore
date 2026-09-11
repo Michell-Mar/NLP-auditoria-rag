@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+cdk.out/
+cdk-outputs.json
+downloads/
+*.pdf
+chunks_generados.txt
+resultado_auditoria.json
+reporte_auditoria.md
+
+experimentos/

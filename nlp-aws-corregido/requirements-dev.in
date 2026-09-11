@@ -1,0 +1,4 @@
+-r app/requirements.in
+aws-cdk-lib==2.260.0
+constructs>=10,<11
+pytest>=8,<9
