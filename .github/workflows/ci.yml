@@ -1,0 +1,39 @@
+name: Validate both NLP auditor versions
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate ${{ matrix.project }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [nlp-aws-original, nlp-aws-corregido]
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: ${{ matrix.project }}/requirements-dev.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Check dependency compatibility
+        run: pip check
+      - name: Test application and infrastructure
+        run: python -m pytest -q
+      - name: Build the Lambda container
+        run: docker build --platform linux/amd64 --provenance=false -t nlp-audit:test app
