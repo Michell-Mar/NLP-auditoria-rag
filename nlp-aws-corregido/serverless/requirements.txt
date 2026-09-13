@@ -1,0 +1,8 @@
+# Hand-written (not pip-compiled like app/requirements.txt). Deliberately
+# light: no langchain/openai/pypdf here -- this Lambda only orchestrates and
+# renders reports, it never runs the audit itself.
+fastapi>=0.115,<1
+mangum>=0.17,<1
+boto3>=1.34
+reportlab>=4.0,<6
+pydantic>=2,<3

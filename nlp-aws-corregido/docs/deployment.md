@@ -10,12 +10,15 @@ Desde la raíz de este proyecto:
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements-dev.txt
-npm install -g aws-cdk
+npm install   # instala la versión de aws-cdk fijada en package.json, no una global
 aws configure sso --profile nlp-dev
 aws sso login --profile nlp-dev
 aws sts get-caller-identity --profile nlp-dev
 python -m pytest -q
 ```
+
+A partir de aquí, cualquier comando `cdk ...` de esta guía es en realidad `npx cdk ...`
+(usa la versión instalada en `node_modules/`, no una del sistema).
 
 El administrador de tu cuenta debe habilitar IAM Identity Center para utilizar SSO. Si tu cuenta utiliza otro método de autenticación, configura su perfil de AWS CLI. No agregues access keys a los archivos del repo.
 

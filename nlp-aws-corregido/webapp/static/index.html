@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditor de Avisos de Privacidad</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>Auditor de Avisos de Privacidad</h1>
+    <p class="subtitulo">
+      Interfaz local conectada a tu Lambda en AWS · LFPDPPP.
+      Las credenciales de AWS nunca salen de este servidor local.
+    </p>
+  </header>
+
+  <main class="shell">
+
+    <section id="panel-carga" class="panel">
+      <div id="dropzone" class="dropzone">
+        <p class="dropzone__texto">Arrastra aquí el PDF del aviso de privacidad</p>
+        <p class="dropzone__o">o</p>
+        <label class="boton boton--secundario">
+          Elegir archivo
+          <input id="input-archivo" type="file" accept="application/pdf,.pdf" hidden>
+        </label>
+        <p id="nombre-archivo" class="nombre-archivo" hidden></p>
+      </div>
+      <button id="boton-auditar" class="boton boton--primario" disabled>Auditar aviso</button>
+    </section>
+
+    <section id="panel-estado" class="panel" hidden>
+      <div class="estado">
+        <span id="estado-spinner" class="spinner" aria-hidden="true"></span>
+        <span id="estado-texto">Preparando…</span>
+      </div>
+      <p class="estado__nota">
+        Una auditoría completa puede tardar varios minutos (nueve criterios, cada uno
+        evaluado con el modelo de lenguaje). No cierres esta pestaña.
+      </p>
+    </section>
+
+    <section id="panel-error" class="panel panel--error" hidden>
+      <p id="error-texto"></p>
+    </section>
+
+    <section id="panel-rechazo" class="panel panel--rechazo" hidden>
+      <h2>⛔ Documento rechazado</h2>
+      <p>El sanity check del auditor determinó que este PDF no es un aviso de privacidad.</p>
+      <dl class="detalle-rechazo">
+        <dt>Tipo de documento detectado</dt><dd id="rechazo-tipo"></dd>
+        <dt>Confianza</dt><dd id="rechazo-confianza"></dd>
+        <dt>Motivo</dt><dd id="rechazo-motivo"></dd>
+      </dl>
+      <p class="nota-pequena">
+        Si crees que es un error, puedes forzar la auditoría localmente con
+        <code>python app/audito_rag_pdf.py tu_aviso.pdf --forzar</code>.
+      </p>
+    </section>
+
+    <section id="panel-resultados" class="panel" hidden>
+
+      <div class="resumen">
+        <div class="resumen__veredicto">
+          <span id="veredicto-global" class="chip chip--grande">—</span>
+          <span id="veredicto-porcentaje" class="porcentaje">—%</span>
+        </div>
+        <dl class="resumen__conteo">
+          <div><dt>Cumple total</dt><dd id="conteo-total">0</dd></div>
+          <div><dt>Cumple parcial</dt><dd id="conteo-parcial">0</dd></div>
+          <div><dt>No cumple</dt><dd id="conteo-no">0</dd></div>
+        </dl>
+        <p id="resumen-revision" class="nota-pequena"></p>
+      </div>
+
+      <div id="banner-desactualizacion" class="banner banner--advertencia" hidden>
+        <strong>⚠️ Nota de desactualización normativa</strong>
+        <p>
+          El aviso hace referencia al INAI/IFAI como autoridad de control. Tras la reforma
+          de 2025, la vigilancia, protección y sanción en materia de datos personales
+          corresponde a la Secretaría Anticorrupción y Buen Gobierno.
+        </p>
+        <ul id="lista-desactualizacion"></ul>
+      </div>
+
+      <div class="acciones-descarga">
+        <a id="descarga-json" class="boton boton--secundario" href="#">Descargar JSON</a>
+        <a id="descarga-md" class="boton boton--secundario" href="#">Descargar Markdown</a>
+        <button id="boton-guardar-revision" class="boton boton--primario">Guardar cambios de revisión</button>
+        <span id="guardado-confirmacion" class="nota-pequena" hidden>✔ Cambios guardados</span>
+      </div>
+
+      <ol id="lista-reglas" class="lista-reglas"></ol>
+
+    </section>
+
+  </main>
+
+  <template id="plantilla-regla">
+    <li class="regla">
+      <div class="regla__encabezado">
+        <h3 class="regla__titulo"></h3>
+        <span class="regla__referencia"></span>
+      </div>
+      <span class="chip regla__chip"></span>
+      <dl class="regla__detalle">
+        <dt>Evidencia</dt><dd class="regla__evidencia"></dd>
+        <dt>Elementos faltantes</dt><dd class="regla__faltantes"></dd>
+        <dt>Justificación</dt><dd class="regla__justificacion"></dd>
+      </dl>
+      <details class="regla__revision">
+        <summary>Revisar / corregir</summary>
+        <label>
+          Veredicto final
+          <select class="regla__select-veredicto">
+            <option>Cumple total</option>
+            <option>Cumple parcial</option>
+            <option>No cumple</option>
+          </select>
+        </label>
+        <label>
+          Nota del revisor
+          <textarea class="regla__nota" rows="2" placeholder="Opcional: por qué ajustas este veredicto"></textarea>
+        </label>
+        <p class="regla__marca nota-pequena"></p>
+      </details>
+    </li>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>

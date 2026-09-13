@@ -1,0 +1,153 @@
+:root {
+  --bg: #faf8f4;
+  --surface: #ffffff;
+  --border: #e2dccf;
+  --ink: #2a251c;
+  --ink-muted: #6b6152;
+  --accent: #b4491d;
+  --accent-ink: #ffffff;
+  --ok: #2e7a38;
+  --ok-bg: #e6f1e3;
+  --warn: #9e5b0b;
+  --warn-bg: #f6ead4;
+  --no: #ae3b2c;
+  --no-bg: #f6e2dc;
+  --radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+.masthead {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.masthead h1 { margin: 0 0 6px; font-size: 1.5rem; }
+.subtitulo { margin: 0; color: var(--ink-muted); font-size: 0.92rem; }
+
+.shell {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.panel--error { border-color: var(--no); background: var(--no-bg); color: var(--no); }
+.panel--rechazo { border-color: var(--no); }
+.panel--rechazo h2 { margin-top: 0; color: var(--no); }
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 32px 16px;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+.dropzone.arrastrando { border-color: var(--accent); background: #fdf3ec; }
+.dropzone__texto { margin: 0 0 8px; font-weight: 500; }
+.dropzone__o { margin: 8px 0; color: var(--ink-muted); font-size: 0.85rem; }
+.nombre-archivo { margin-top: 12px; font-size: 0.9rem; color: var(--ink-muted); }
+
+.boton {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+.boton--primario { background: var(--accent); color: var(--accent-ink); margin-top: 16px; }
+.boton--primario:disabled { opacity: 0.45; cursor: not-allowed; }
+.boton--secundario { background: var(--bg); color: var(--ink); border: 1px solid var(--border); }
+.boton:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.estado { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+.estado__nota { margin: 10px 0 0; color: var(--ink-muted); font-size: 0.85rem; }
+.spinner {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 3px solid var(--border); border-top-color: var(--accent);
+  animation: girar 0.8s linear infinite;
+}
+@keyframes girar { to { transform: rotate(360deg); } }
+
+.detalle-rechazo { display: grid; grid-template-columns: max-content 1fr; gap: 4px 16px; margin: 12px 0; }
+.detalle-rechazo dt { color: var(--ink-muted); font-size: 0.85rem; }
+.detalle-rechazo dd { margin: 0; }
+.nota-pequena { color: var(--ink-muted); font-size: 0.82rem; }
+code { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; }
+
+.resumen {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+  padding-bottom: 16px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+}
+.resumen__veredicto { display: flex; align-items: baseline; gap: 10px; }
+.porcentaje { font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.resumen__conteo { display: flex; gap: 18px; margin: 0; }
+.resumen__conteo > div { text-align: center; }
+.resumen__conteo dt { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-muted); }
+.resumen__conteo dd { margin: 0; font-size: 1.2rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.chip {
+  display: inline-block; padding: 4px 12px; border-radius: 999px;
+  font-size: 0.82rem; font-weight: 600;
+}
+.chip--grande { font-size: 0.95rem; }
+.chip--Cumple-total, .chip[data-veredicto="Cumple total"] { background: var(--ok-bg); color: var(--ok); }
+.chip[data-veredicto="Cumple parcial"] { background: var(--warn-bg); color: var(--warn); }
+.chip[data-veredicto="No cumple"] { background: var(--no-bg); color: var(--no); }
+.chip[data-veredicto="CUMPLE"] { background: var(--ok-bg); color: var(--ok); }
+.chip[data-veredicto="CUMPLE PARCIALMENTE"] { background: var(--warn-bg); color: var(--warn); }
+.chip[data-veredicto="NO CUMPLE"] { background: var(--no-bg); color: var(--no); }
+
+.banner { border-radius: var(--radius); padding: 14px 16px; margin-bottom: 16px; }
+.banner--advertencia { background: var(--warn-bg); color: #5c3a06; }
+.banner p { margin: 6px 0; }
+.banner ul { margin: 6px 0 0; padding-left: 20px; }
+
+.acciones-descarga {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 20px;
+}
+.acciones-descarga .boton--primario { margin-top: 0; }
+
+.lista-reglas { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.regla { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.regla__encabezado { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.regla__titulo { margin: 0; font-size: 1rem; }
+.regla__referencia { font-size: 0.78rem; color: var(--ink-muted); white-space: nowrap; }
+.regla__chip { margin: 8px 0 10px; }
+.regla__detalle { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: 0.9rem; }
+.regla__detalle dt { color: var(--ink-muted); }
+.regla__detalle dd { margin: 0; }
+
+.regla__revision { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 10px; }
+.regla__revision summary { cursor: pointer; font-size: 0.85rem; font-weight: 600; color: var(--accent); }
+.regla__revision label { display: block; font-size: 0.82rem; color: var(--ink-muted); margin-top: 10px; }
+.regla__revision select, .regla__revision textarea {
+  display: block; width: 100%; margin-top: 4px; padding: 6px 8px;
+  border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 0.9rem;
+}
+.regla__marca { margin-top: 8px; }
+
+@media (max-width: 520px) {
+  .resumen { flex-direction: column; align-items: flex-start; }
+  .regla__detalle { grid-template-columns: 1fr; }
+}

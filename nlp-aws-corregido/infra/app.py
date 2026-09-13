@@ -9,6 +9,8 @@ from aws_cdk import aws_s3 as s3
 from aws_cdk import aws_secretsmanager as secrets
 from constructs import Construct
 
+from webapp_stack import WebappStack
+
 
 class AuditStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs):
@@ -25,7 +27,16 @@ class AuditStack(Stack):
             lifecycle_rules=[s3.LifecycleRule(expiration=Duration.days(7),
                             abort_incomplete_multipart_upload_after=Duration.days(1))],
         )
-        inputs = s3.Bucket(self, "Inputs", **bucket_options)
+        inputs = s3.Bucket(
+            self, "Inputs", **bucket_options,
+            # Necesario solo para el stack serverless (WebappStack): el
+            # navegador sube el PDF directo a este bucket con una URL
+            # prefirmada. La autorización real la da la firma de esa URL, no
+            # esta política de CORS -- CORS únicamente decide si el
+            # JavaScript de una página puede iniciar la petición PUT.
+            cors=[s3.CorsRule(allowed_methods=[s3.HttpMethods.PUT],
+                              allowed_origins=["*"], allowed_headers=["*"])],
+        )
         results = s3.Bucket(self, "Results", **bucket_options)
         log_group = logs.LogGroup(self, "WorkerLogs",
                                   retention=logs.RetentionDays.ONE_WEEK,
@@ -57,6 +68,15 @@ class AuditStack(Stack):
 
 if __name__ == "__main__":
     app = App()
-    AuditStack(app, "NlpAuditStack", env=Environment(
-        account=os.getenv("CDK_DEFAULT_ACCOUNT"), region=os.getenv("CDK_DEFAULT_REGION")))
+    env = Environment(account=os.getenv("CDK_DEFAULT_ACCOUNT"), region=os.getenv("CDK_DEFAULT_REGION"))
+    # AuditStack.__init__ exige -c openaiSecretArn sin importar qué stack le
+    # pidas a `cdk deploy`/`cdk synth` -- CDK construye la app completa antes
+    # de elegir cuál desplegar. WebappStack, en cambio, SOLO se construye si
+    # ya le pasaste su contexto (auditFunctionName/auditInputBucket/
+    # auditResultBucket): así "cdk deploy NlpAuditStack -c openaiSecretArn=..."
+    # sigue funcionando solo, sin pedir datos de un stack que quizá ni exista
+    # todavía. Pasa los 4 valores juntos cuando sí quieras tocar WebappStack.
+    AuditStack(app, "NlpAuditStack", env=env)
+    if app.node.try_get_context("auditFunctionName"):
+        WebappStack(app, "WebappStack", env=env)
     app.synth()

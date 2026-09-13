@@ -1,0 +1,477 @@
+<title>Piloto en AWS</title>
+<meta name="description" content="Runbook para publicar la interfaz web del auditor a un grupo de testers invitados: cómputo en AWS con rol IAM, sin autenticación propia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+  :root {
+    --bg: #FAF7F2; --surface: #FFFFFF; --surface-2: #F1EBDF;
+    --border: #E4DACA; --border-strong: #D2C4AE;
+    --ink: #231D15; --ink-2: #5E5446; --ink-3: #8B8072;
+    --accent: #B4491D; --accent-tint: #F4E3D9;
+    --teal: #0E6C73;
+    --ok: #2E7A38; --ok-bg: #E6F1E3;
+    --warn: #9E5B0B; --warn-bg: #F6EAD4;
+    --no: #AE3B2C; --no-bg: #F6E2DC;
+    --code-bg: #F3ECDF; --code-ink: #322B20; --code-border: #E0D4BF;
+    --node-accent-bg: #F4E3D9;
+    --focus: #B4491D;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #15120E; --surface: #1E1913; --surface-2: #29221A;
+      --border: #382F25; --border-strong: #4A3F31;
+      --ink: #EFE7DB; --ink-2: #B2A794; --ink-3: #837968;
+      --accent: #EA6A33; --accent-tint: #33231A;
+      --teal: #3AA9B0;
+      --ok: #6FC06B; --ok-bg: #1D2C1C;
+      --warn: #D89B4C; --warn-bg: #322616;
+      --no: #E28170; --no-bg: #331E19;
+      --code-bg: #241E17; --code-ink: #E0D8CA; --code-border: #3A3125;
+      --node-accent-bg: #33231A; --focus: #EA6A33;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15120E; --surface: #1E1913; --surface-2: #29221A;
+    --border: #382F25; --border-strong: #4A3F31;
+    --ink: #EFE7DB; --ink-2: #B2A794; --ink-3: #837968;
+    --accent: #EA6A33; --accent-tint: #33231A;
+    --teal: #3AA9B0;
+    --ok: #6FC06B; --ok-bg: #1D2C1C;
+    --warn: #D89B4C; --warn-bg: #322616;
+    --no: #E28170; --no-bg: #331E19;
+    --code-bg: #241E17; --code-ink: #E0D8CA; --code-border: #3A3125;
+    --node-accent-bg: #33231A; --focus: #EA6A33;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, system-ui, "Segoe UI", sans-serif;
+    font-size: 16px; line-height: 1.62; -webkit-font-smoothing: antialiased;
+  }
+
+  .shell {
+    display: grid; grid-template-columns: minmax(0, 1fr); gap: 0;
+    max-width: 780px; margin: 0 auto; padding: 40px 24px 96px;
+  }
+  @media (min-width: 1120px) {
+    .shell { grid-template-columns: 216px minmax(0, 760px); gap: 56px; max-width: 1092px; }
+  }
+
+  .toc {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.78rem; line-height: 1.5;
+    border: 1px solid var(--border); border-radius: 4px; background: var(--surface);
+    padding: 16px 18px; margin-bottom: 32px;
+  }
+  @media (min-width: 1120px) {
+    .toc { position: sticky; top: 20px; margin-bottom: 0; border: none; border-left: 2px solid var(--border);
+          border-radius: 0; background: transparent; padding: 4px 0 4px 16px; }
+  }
+  .toc__title { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.68rem; color: var(--ink-3); margin-bottom: 10px; }
+  .toc a { display: block; color: var(--ink-2); text-decoration: none; padding: 3px 0; border-radius: 3px; }
+  .toc a:hover { color: var(--accent); }
+  .toc a b { color: var(--ink-3); font-weight: 500; margin-right: 8px; }
+
+  header.masthead { margin-bottom: 44px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; text-transform: uppercase;
+    letter-spacing: 0.2em; font-size: 0.72rem; color: var(--accent); margin: 0 0 14px;
+  }
+  h1 {
+    font-family: "IBM Plex Serif", "Iowan Old Style", Georgia, serif; font-weight: 600;
+    font-size: clamp(2.1rem, 5.4vw, 3rem); line-height: 1.08; letter-spacing: -0.01em;
+    text-wrap: balance; margin: 0 0 18px;
+  }
+  .dek { font-size: 1.08rem; color: var(--ink-2); max-width: 60ch; margin: 0 0 26px; }
+  .decisions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .decisions span {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.74rem; padding: 5px 10px;
+    border: 1px solid var(--border-strong); border-radius: 3px; background: var(--surface); color: var(--ink-2);
+  }
+  .decisions span b { color: var(--ink); font-weight: 500; }
+
+  main { min-width: 0; }
+  section.phase { margin-top: 56px; scroll-margin-top: 24px; }
+  section.phase:first-of-type { margin-top: 0; }
+  .phase__head {
+    display: flex; align-items: baseline; gap: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border); margin-bottom: 22px;
+  }
+  .phase__num { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.9rem; color: var(--accent); font-weight: 500; flex-shrink: 0; }
+  h2 {
+    font-family: "IBM Plex Serif", "Iowan Old Style", Georgia, serif; font-weight: 600; font-size: 1.6rem;
+    line-height: 1.15; letter-spacing: -0.005em; text-wrap: balance; margin: 0;
+  }
+  h3 { font-size: 1.02rem; font-weight: 600; letter-spacing: 0.005em; margin: 30px 0 10px; }
+  p { margin: 14px 0; max-width: 66ch; }
+  main li { max-width: 64ch; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  strong { font-weight: 600; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--ink-3); }
+
+  code {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.86em; background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: 3px; padding: 1px 5px; color: var(--code-ink);
+  }
+
+  .code { margin: 20px 0; border: 1px solid var(--code-border); border-radius: 5px; overflow: hidden; background: var(--code-bg); }
+  .code__name {
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.72rem; letter-spacing: 0.04em;
+    color: var(--ink-3); padding: 8px 14px; border-bottom: 1px solid var(--code-border); background: var(--surface-2);
+    display: flex; justify-content: space-between;
+  }
+  .code__name span { color: var(--accent); }
+  .code pre {
+    margin: 0; padding: 14px 16px; overflow-x: auto; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    font-size: 0.8rem; line-height: 1.62; color: var(--code-ink); tab-size: 2;
+  }
+  .code pre code { background: none; border: none; padding: 0; font-size: inherit; color: inherit; }
+
+  .note {
+    margin: 20px 0; padding: 14px 16px 14px 18px; border-left: 3px solid var(--border-strong);
+    border-radius: 0 4px 4px 0; background: var(--surface); font-size: 0.93rem;
+  }
+  .note p { margin: 6px 0; max-width: none; }
+  .note :first-child { margin-top: 0; } .note :last-child { margin-bottom: 0; }
+  .note__tag { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.66rem; display: block; margin-bottom: 4px; }
+  .note--decision { border-left-color: var(--teal); }
+  .note--decision .note__tag { color: var(--teal); }
+  .note--trim { border-left-color: var(--warn); background: var(--warn-bg); }
+  .note--trim .note__tag { color: var(--warn); }
+  .note--sec { border-left-color: var(--no); background: var(--no-bg); }
+  .note--sec .note__tag { color: var(--no); }
+
+  .flow { margin: 24px 0 8px; display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .node { border: 1px solid var(--border-strong); border-radius: 5px; background: var(--surface); padding: 12px 15px; font-size: 0.9rem; font-weight: 500; }
+  .node small { display: block; font-weight: 400; font-size: 0.78rem; color: var(--ink-3); margin-top: 2px; }
+  .node--accent { background: var(--node-accent-bg); border-color: var(--accent); }
+  .node--user { background: var(--surface-2); }
+  .node--ext { border-style: dashed; border-color: var(--warn); background: var(--warn-bg); }
+  .flow .branch { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .flow .arrow { align-self: center; display: flex; align-items: center; gap: 10px; padding: 9px 0; color: var(--ink-3); }
+  .flow .arrow::before { content: "↓"; font-size: 1rem; color: var(--accent); }
+  .flow .arrow span { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.74rem; }
+  .flow .rail { height: 14px; width: 1px; background: var(--border-strong); align-self: center; margin: 2px 0; }
+
+  .tablewrap { overflow-x: auto; margin: 18px 0; border: 1px solid var(--border); border-radius: 5px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.86rem; min-width: 420px; }
+  caption {
+    caption-side: top; text-align: left; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-3); padding: 10px 14px; background: var(--surface-2); border-bottom: 1px solid var(--border);
+  }
+  th, td { text-align: left; padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); }
+  tbody tr:last-child td { border-bottom: none; }
+
+  ol.run { counter-reset: run; list-style: none; padding: 0; }
+  ol.run > li { counter-increment: run; position: relative; padding-left: 42px; margin: 12px 0; max-width: 64ch; }
+  ol.run > li::before {
+    content: counter(run, decimal-leading-zero); position: absolute; left: 0; top: 1px;
+    font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 0.8rem; color: var(--accent);
+  }
+
+  .checklist { list-style: none; padding: 0; margin: 18px 0; }
+  .checklist li { position: relative; padding-left: 30px; margin: 9px 0; max-width: 64ch; }
+  .checklist li::before { content: ""; position: absolute; left: 0; top: 3px; width: 16px; height: 16px; border: 1.5px solid var(--border-strong); border-radius: 3px; background: var(--surface); }
+  .checklist li::after { content: "✓"; position: absolute; left: 3px; top: 1px; font-size: 0.8rem; color: var(--teal); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.84rem; color: var(--ink-3); }
+  a:focus-visible, .toc a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+
+<div class="shell">
+
+  <nav class="toc" aria-label="Contenido">
+    <div class="toc__title">Runbook</div>
+    <a href="#arquitectura"><b>·</b>Arquitectura del piloto</a>
+    <a href="#fase-0"><b>00</b>Redesplegar el Lambda</a>
+    <a href="#fase-1"><b>01</b>Rol de IAM para la instancia</a>
+    <a href="#fase-2"><b>02</b>Lanzar la instancia EC2</a>
+    <a href="#fase-3"><b>03</b>Instalar el código</a>
+    <a href="#fase-4"><b>04</b>Correrlo como servicio</a>
+    <a href="#fase-5"><b>05</b>Probarlo tú primero</a>
+    <a href="#fase-6"><b>06</b>Compartir con los testers</a>
+    <a href="#fase-7"><b>07</b>Monitoreo durante el piloto</a>
+    <a href="#fase-8"><b>08</b>Cerrar el piloto</a>
+    <a href="#riesgos"><b>·</b>Lo que aceptaste al no poner login</a>
+  </nav>
+
+  <main>
+    <header class="masthead">
+      <p class="eyebrow">Runbook de publicación · piloto</p>
+      <h1>Piloto en AWS</h1>
+      <p class="dek">
+        Cómo llevar <code>webapp-pdf/</code> de tu laptop a una instancia que unos cuantos
+        testers invitados puedan usar sin que tú tengas la terminal abierta.
+      </p>
+      <div class="decisions">
+        <span><b>Alcance:</b> testers invitados</span>
+        <span><b>Cómputo:</b> EC2 con rol IAM</span>
+        <span><b>Auth:</b> ninguna (el link es el secreto)</span>
+      </div>
+    </header>
+
+    <section class="phase" id="arquitectura">
+      <div class="phase__head"><span class="phase__num">▚</span><h2>Arquitectura del piloto</h2></div>
+      <p>
+        No cambia el pipeline: sigue siendo <code>webapp-pdf/server.py</code> subiendo a S3 e
+        invocando el mismo Lambda. Lo único nuevo es <strong>dónde corre el servidor</strong> —
+        de tu laptop con tu perfil de SSO, a una instancia EC2 con un rol de IAM propio, para
+        que puedas cerrar la laptop sin tumbar el piloto.
+      </p>
+      <div class="flow" role="img" aria-label="Diagrama de arquitectura del piloto">
+        <div class="node node--user">Testers invitados <small>tienen el link; sin login</small></div>
+        <div class="arrow"><span>HTTP, puerto 8000</span></div>
+        <div class="node node--accent">EC2 t3.micro · <code>webapp-pdf/server.py</code> <small>rol de IAM, no tu perfil personal</small></div>
+        <div class="branch">
+          <div class="node">S3 · entradas <small>PutObject en <code>inputs/*</code></small></div>
+          <div class="node">Lambda · Worker <small>InvokeFunction</small></div>
+          <div class="node">S3 · resultados <small>GetObject en <code>results/*</code></small></div>
+        </div>
+        <div class="arrow"><span>el Lambda ya trae el endurecimiento contra prompt injection</span></div>
+        <div class="node node--ext">OpenAI API <small>gpt-4o + gpt-4o-mini</small></div>
+      </div>
+      <div class="note note--decision">
+        <span class="note__tag">Decisión ya tomada</span>
+        <p>Sin autenticación propia — el link es el secreto, para un grupo pequeño de testers
+        invitados. El límite de concurrencia (3 auditorías simultáneas) que ya está en el
+        código es, con esta elección, tu única barrera real contra un mal uso accidental o
+        deliberado. Ver <a href="#riesgos">Lo que aceptaste al no poner login</a> al final.</p>
+      </div>
+    </section>
+
+    <section class="phase" id="fase-0">
+      <div class="phase__head"><span class="phase__num">00</span><h2>Redesplegar el Lambda con el endurecimiento</h2></div>
+      <p>
+        Los cambios de <code>max_tokens</code> y aislamiento del contexto viven en
+        <code>app/audito_rag_pdf.py</code>, que se hornea en la imagen Docker del Lambda. Si no
+        corres esto, tus testers auditarán con la versión <em>sin</em> ese endurecimiento.
+      </p>
+      <div class="code">
+        <div class="code__name"><span>terminal, en tu máquina</span></div>
+        <pre><code>cd nlp-aws-corregido
+export AWS_PROFILE=nlp-dev
+export AWS_REGION=us-east-1
+aws sso login --profile nlp-dev
+cdk deploy -c openaiSecretArn="$NLP_SECRET_ARN" --outputs-file cdk-outputs.json</code></pre>
+      </div>
+      <p>Confirma que <code>cdk-outputs.json</code> se actualizó (o al menos no cambió de forma inesperada) antes de seguir.</p>
+    </section>
+
+    <section class="phase" id="fase-1">
+      <div class="phase__head"><span class="phase__num">01</span><h2>Rol de IAM para la instancia</h2></div>
+      <p>
+        La instancia EC2 necesita permiso para invocar <strong>ese</strong> Lambda y leer/escribir
+        <strong>esos</strong> dos buckets — nada más. Nunca copies tu perfil <code>nlp-dev</code>
+        (SSO, de un humano) a la instancia.
+      </p>
+      <div class="code">
+        <div class="code__name"><span>politica-piloto.json</span></div>
+        <pre><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Effect": "Allow", "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:us-east-1:TU_CUENTA:function:NOMBRE_DEL_LAMBDA" },
+    { "Effect": "Allow", "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::TU_INPUT_BUCKET/inputs/*" },
+    { "Effect": "Allow", "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::TU_RESULT_BUCKET/results/*" }
+  ]
+}</code></pre>
+      </div>
+      <p><code>NOMBRE_DEL_LAMBDA</code>, <code>TU_INPUT_BUCKET</code> y <code>TU_RESULT_BUCKET</code> están en tu <code>cdk-outputs.json</code> (<code>FunctionName</code>, <code>InputBucket</code>, <code>ResultBucket</code>).</p>
+      <div class="code">
+        <div class="code__name"><span>terminal</span></div>
+        <pre><code>aws iam create-policy --policy-name auditor-piloto-ec2 --policy-document file://politica-piloto.json
+aws iam create-role --role-name auditor-piloto-ec2-role \
+  --assume-role-policy-document '{"Version":"2012-10-17","Statement":[{"Effect":"Allow",
+  "Principal":{"Service":"ec2.amazonaws.com"},"Action":"sts:AssumeRole"}]}'
+aws iam attach-role-policy --role-name auditor-piloto-ec2-role \
+  --policy-arn arn:aws:iam::TU_CUENTA:policy/auditor-piloto-ec2
+# Permite entrar por SSM Session Manager en vez de abrir el puerto 22
+aws iam attach-role-policy --role-name auditor-piloto-ec2-role \
+  --policy-arn arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+aws iam create-instance-profile --instance-profile-name auditor-piloto-ec2-profile
+aws iam add-role-to-instance-profile --instance-profile-name auditor-piloto-ec2-profile \
+  --role-name auditor-piloto-ec2-role</code></pre>
+      </div>
+    </section>
+
+    <section class="phase" id="fase-2">
+      <div class="phase__head"><span class="phase__num">02</span><h2>Lanzar la instancia EC2</h2></div>
+      <p>
+        La instancia solo corre un proxy HTTP delgado — el trabajo pesado (las 9 llamadas a
+        gpt-4o) pasa en el Lambda. <code>t3.micro</code> sobra.
+      </p>
+      <div class="code">
+        <div class="code__name"><span>terminal</span></div>
+        <pre><code># Grupo de seguridad: puerto 8000 abierto, SIN el 22 (usamos SSM)
+aws ec2 create-security-group --group-name auditor-piloto-sg \
+  --description "Piloto del auditor - solo 8000"
+aws ec2 authorize-security-group-ingress --group-name auditor-piloto-sg \
+  --protocol tcp --port 8000 --cidr 0.0.0.0/0
+
+aws ec2 run-instances \
+  --image-id ami-XXXXXXXX \
+  --instance-type t3.micro \
+  --iam-instance-profile Name=auditor-piloto-ec2-profile \
+  --security-groups auditor-piloto-sg \
+  --count 1 \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=auditor-piloto}]'</code></pre>
+      </div>
+      <p><code>ami-XXXXXXXX</code>: usa la AMI más reciente de <strong>Amazon Linux 2023</strong> para <code>us-east-1</code> (<code>aws ec2 describe-images --owners amazon --filters "Name=name,Values=al2023-ami-*-x86_64" --query "sort_by(Images,&amp;CreationDate)[-1].ImageId" --output text</code>).</p>
+      <div class="note note--trim">
+        <span class="note__tag">Recorte disponible</span>
+        <p><code>0.0.0.0/0</code> en el puerto 8000 significa que cualquiera con la IP pública de
+        la instancia puede pegarle, no solo quien tenga el link "secreto" de la app. Si conoces
+        de antemano las IPs de tus testers, cambia el CIDR por esas — sigue sin ser
+        autenticación, pero acorta quién puede ni siquiera intentarlo.</p>
+      </div>
+    </section>
+
+    <section class="phase" id="fase-3">
+      <div class="phase__head"><span class="phase__num">03</span><h2>Instalar el código en la instancia</h2></div>
+      <p>Entra por SSM (no necesitas SSH ni una llave):</p>
+      <div class="code">
+        <div class="code__name"><span>terminal, en tu máquina</span></div>
+        <pre><code>aws ssm start-session --target i-XXXXXXXXXXXXXXXXX</code></pre>
+      </div>
+      <p>Ya dentro de la instancia:</p>
+      <div class="code">
+        <div class="code__name"><span>dentro de la instancia EC2</span></div>
+        <pre><code>sudo dnf install -y python3.12 python3.12-pip git
+sudo mkdir -p /opt/nlp-aws-corregido &amp;&amp; sudo chown ec2-user:ec2-user /opt/nlp-aws-corregido
+cd /opt/nlp-aws-corregido
+git clone https://github.com/Michell-Mar/NLP-auditoria-rag.git . -b dev
+# o: sube el código con `aws s3 cp` / `scp` vía SSM si el repo no es público
+
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r nlp-aws-corregido/app/requirements.txt -r nlp-aws-corregido/webapp-pdf/requirements.txt
+echo "$(pwd)/nlp-aws-corregido/cdk-outputs.json"   # confírmalo aquí también, o cópialo manualmente</code></pre>
+      </div>
+      <p>
+        <code>cdk-outputs.json</code> no va en el repo (está en <code>.gitignore</code>) —
+        cópialo aparte a la instancia, por ejemplo con
+        <code>aws ssm start-session ... --document-name AWS-StartInteractiveCommand</code> o
+        simplemente pegando su contenido con <code>cat &gt; cdk-outputs.json &lt;&lt;'EOF'</code>.
+      </p>
+    </section>
+
+    <section class="phase" id="fase-4">
+      <div class="phase__head"><span class="phase__num">04</span><h2>Correrlo como servicio (no en una terminal abierta)</h2></div>
+      <div class="code">
+        <div class="code__name"><span>/etc/systemd/system/auditor-piloto.service</span></div>
+        <pre><code>[Unit]
+Description=Auditor de Avisos - piloto web (PDF)
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/opt/nlp-aws-corregido/nlp-aws-corregido
+ExecStart=/opt/nlp-aws-corregido/.venv/bin/python webapp-pdf/server.py \
+  --region us-east-1 --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+      </div>
+      <div class="code">
+        <div class="code__name"><span>dentro de la instancia EC2</span></div>
+        <pre><code>sudo systemctl daemon-reload
+sudo systemctl enable --now auditor-piloto
+sudo systemctl status auditor-piloto
+sudo journalctl -u auditor-piloto -f   # logs en vivo</code></pre>
+      </div>
+      <p>
+        Sin <code>--profile</code>: al omitirlo, <code>boto3</code> toma automáticamente las
+        credenciales del rol de IAM de la instancia (IMDS) — nunca tu perfil SSO personal.
+      </p>
+    </section>
+
+    <section class="phase" id="fase-5">
+      <div class="phase__head"><span class="phase__num">05</span><h2>Pruébalo tú primero</h2></div>
+      <ol class="run">
+        <li>Consigue la IP pública: <code>aws ec2 describe-instances --instance-ids i-XXXX --query "Reservations[0].Instances[0].PublicIpAddress" --output text</code>.</li>
+        <li>Abre <code>http://LA_IP:8000</code> en tu navegador.</li>
+        <li>Sube un aviso de privacidad real y espera a que termine (varios minutos — son 9 llamadas a gpt-4o).</li>
+        <li>Confirma que ves el resumen, la nota de desactualización si aplica, y que puedes editar una regla y descargar el PDF.</li>
+        <li>Sube un cuarto PDF a propósito mientras hay 3 corriendo — confirma que te regresa el aviso de "demasiadas auditorías en curso" (HTTP 429) en vez de aceptarlo silenciosamente.</li>
+      </ol>
+    </section>
+
+    <section class="phase" id="fase-6">
+      <div class="phase__head"><span class="phase__num">06</span><h2>Compartir con los testers</h2></div>
+      <p>Mándales el link (<code>http://LA_IP:8000</code>) junto con algo así:</p>
+      <div class="note">
+        <p>"Sube el PDF de un aviso de privacidad. Tarda unos minutos en procesar — no cierres
+        la pestaña. Vas a ver el veredicto por cada uno de 9 criterios legales; puedes corregir
+        el veredicto de cualquiera antes de descargar el PDF final. No subas documentos con
+        información personal real de terceros sin autorización."</p>
+      </div>
+      <p>
+        Como no hay cuentas, no hay forma de saber quién subió qué salvo por los timestamps en
+        los logs (<code>journalctl</code>) y los nombres de archivo. Si necesitas atribuir
+        auditorías a testers específicos, pídeles que antepongan su nombre al del archivo antes
+        de subirlo.
+      </p>
+    </section>
+
+    <section class="phase" id="fase-7">
+      <div class="phase__head"><span class="phase__num">07</span><h2>Monitoreo durante el piloto</h2></div>
+      <ul>
+        <li><strong>Logs del servicio:</strong> <code>sudo journalctl -u auditor-piloto -f</code> — verás cada subida y su estado final.</li>
+        <li><strong>Logs del Lambda:</strong> <code>aws logs tail NOMBRE_DEL_LOG_GROUP --since 1h --profile nlp-dev --region us-east-1</code> (el <code>LogGroup</code> está en <code>cdk-outputs.json</code>).</li>
+        <li><strong>Costo de OpenAI:</strong> revisa el dashboard de uso de tu cuenta OpenAI a diario mientras dure el piloto — es el gasto que no tiene techo duro en el código (solo el límite de tokens por llamada).</li>
+        <li><strong>Instancia viva:</strong> <code>aws ec2 describe-instances --instance-ids i-XXXX --query "Reservations[0].Instances[0].State.Name"</code>.</li>
+      </ul>
+    </section>
+
+    <section class="phase" id="fase-8">
+      <div class="phase__head"><span class="phase__num">08</span><h2>Cerrar el piloto</h2></div>
+      <div class="code">
+        <div class="code__name"><span>terminal</span></div>
+        <pre><code>aws ec2 terminate-instances --instance-ids i-XXXXXXXXXXXXXXXXX
+aws iam remove-role-from-instance-profile --instance-profile-name auditor-piloto-ec2-profile --role-name auditor-piloto-ec2-role
+aws iam delete-instance-profile --instance-profile-name auditor-piloto-ec2-profile
+aws iam detach-role-policy --role-name auditor-piloto-ec2-role --policy-arn arn:aws:iam::TU_CUENTA:policy/auditor-piloto-ec2
+aws iam detach-role-policy --role-name auditor-piloto-ec2-role --policy-arn arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+aws iam delete-role --role-name auditor-piloto-ec2-role
+aws iam delete-policy --policy-arn arn:aws:iam::TU_CUENTA:policy/auditor-piloto-ec2
+aws ec2 delete-security-group --group-name auditor-piloto-sg</code></pre>
+      </div>
+      <p>El Lambda y los buckets se quedan (son del stack de CDK, con <code>RETAIN</code>) — esto solo desmonta lo que agregaste para el piloto.</p>
+    </section>
+
+    <hr>
+
+    <section class="phase" id="riesgos">
+      <div class="phase__head"><span class="phase__num">▚</span><h2>Lo que aceptaste al no poner login</h2></div>
+      <ul class="checklist">
+        <li>Cualquiera que reciba, reenvíe o adivine el link puede disparar auditorías facturables — el límite de concurrencia (3 a la vez) limita el daño, no lo elimina.</li>
+        <li>Sin HTTPS en la ruta rápida de este runbook: el PDF que suben los testers viaja sin cifrar entre su navegador y la instancia. Aceptable para avisos de privacidad públicos de prueba; no subas ahí documentos con datos personales reales de un tercero.</li>
+        <li>No hay atribución por usuario — todo lo que sabes de quién hizo qué sale de los logs y de lo que el propio tester te diga.</li>
+        <li>Nada expira: el link sigue vivo hasta que tú apagues la instancia en la Fase 08.</li>
+      </ul>
+      <p>Si el piloto crece más allá de "unos cuantos testers invitados", vale la pena volver a
+      esta conversación y agregar al menos la contraseña compartida (HTTP Basic Auth) que
+      quedó descartada esta vez, y considerar HTTPS con un dominio propio y Caddy delante de la
+      instancia.</p>
+    </section>
+
+    <footer>
+      Runbook para el piloto de <code>nlp-aws-corregido</code> con testers invitados, sin autenticación propia.
+      Complementa el runbook de despliegue original del stack (CDK + Lambda).
+    </footer>
+
+  </main>
+</div>

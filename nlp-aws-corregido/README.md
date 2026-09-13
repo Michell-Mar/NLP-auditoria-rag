@@ -4,7 +4,7 @@
 
 Auditoría asistida de avisos de privacidad en PDF, con evidencia textual por criterio y reportes JSON/Markdown. Proyecto de portafolio de NLP: extracción de PDF, evaluación con LLM, recuperación semántica para documentos largos e infraestructura como código.
 
-**Estado:** base de despliegue preparada; requiere desplegarse y validarse en tu cuenta AWS. No se han medido precisión, latencia ni costos reales. Esta versión se opera mediante terminal autenticada con AWS; no incluye interfaz web pública.
+**Estado:** base de despliegue preparada; requiere desplegarse y validarse en tu cuenta AWS. No se han medido precisión, latencia ni costos reales. Se opera con credenciales de AWS por terminal (`scripts/audit.py`), por una interfaz web **local** (`webapp/`/`webapp-pdf/`, ver [docs/webapp.md](docs/webapp.md)), o por una interfaz **serverless** con su propia URL pública detrás de API Gateway (`serverless/`, ver [docs/webapp-serverless.md](docs/webapp-serverless.md)) para pilotos con varios testers a la vez.
 
 ## Qué demuestra este repositorio
 
@@ -20,7 +20,7 @@ El texto del PDF se envía a OpenAI. AWS ejecuta la aplicación; los modelos per
 
 ```mermaid
 flowchart TD
-    U["CLI con credenciales AWS"] -->|"Sube PDF"| I["S3: entradas privadas"]
+    U["CLI o interfaz web local, con credenciales AWS"] -->|"Sube PDF"| I["S3: entradas privadas"]
     U -->|"Invocación autenticada"| L["Lambda: auditor Python"]
     I -->|"Lee documento"| L
     S["Secrets Manager"] -->|"Credencial"| L
@@ -43,9 +43,16 @@ La subida a S3 no dispara la auditoría: el CLI la invoca una sola vez de forma 
 | `infra/app.py` | Buckets, Lambda, permisos, retención y outputs |
 | `scripts/create_secret.py` | Creación inicial del secreto desde una entrada oculta |
 | `scripts/audit.py` | Subida, invocación y descarga |
+| `webapp/` | Interfaz web local (subir, ver, corregir y descargar en Markdown) sobre el mismo Lambda |
+| `webapp-pdf/` | Misma interfaz; descarga el reporte en PDF en vez de Markdown |
+| `serverless/` | Interfaz web serverless (API Gateway + 2 Lambdas + SQS + DynamoDB), sin depender de una máquina prendida |
+| `infra/webapp_stack.py` | Stack de CDK de `serverless/` -- reutiliza el Lambda de `AuditStack` sin modificarlo |
 | `tests/` | Pruebas sin AWS ni llamadas reales a OpenAI |
 | `.github/workflows/ci.yml` | Validación automática en push y pull request |
 | `docs/deployment.md` | Instalación, despliegue, ejecución y eliminación |
+| `docs/webapp.md` | Instalación y uso de la interfaz web local (Markdown) |
+| `docs/webapp-pdf.md` | Lo mismo, para la variante que descarga en PDF |
+| `docs/webapp-serverless.md` | Instalación y despliegue de la variante serverless |
 | `docs/decisions.md` | Decisiones, límites, costos y siguientes entregas |
 | `docs/evaluation.md` | Plan de evaluación para presentar resultados verificables |
 
@@ -60,6 +67,27 @@ python scripts/audit.py /ruta/aviso.pdf --profile nlp-dev --region us-east-1
 ```
 
 Se generan reportes en `downloads/<job_id>/`. No publiques PDFs de terceros, reportes reales ni claves sin revisar su contenido y autorización.
+
+Alternativa con interfaz gráfica (misma auditoría, mismo Lambda, corre en tu máquina):
+
+```bash
+pip install -r webapp/requirements.txt
+python webapp/server.py --profile nlp-dev --region us-east-1
+```
+
+Detalles en [docs/webapp.md](docs/webapp.md). Si prefieres descargar el reporte en PDF en vez de
+Markdown, usa la variante `webapp-pdf/` (mismo uso, ver [docs/webapp-pdf.md](docs/webapp-pdf.md)).
+
+Para un piloto con varios testers a la vez, sin dejar tu laptop ni una instancia EC2 prendida,
+usa la variante serverless (API Gateway + Lambda, con HTTPS de fábrica):
+
+```bash
+cdk deploy WebappStack -c openaiSecretArn="$NLP_SECRET_ARN" \
+  -c auditFunctionName="<FunctionName>" -c auditInputBucket="<InputBucket>" \
+  -c auditResultBucket="<ResultBucket>" --outputs-file cdk-outputs-webapp.json
+```
+
+Detalles, límites y cómo probarla en [docs/webapp-serverless.md](docs/webapp-serverless.md).
 
 ## Cómo presentarlo en GitHub
 
