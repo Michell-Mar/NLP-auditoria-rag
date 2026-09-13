@@ -1,0 +1,20 @@
+{
+  "name": "nlp-aws-corregido",
+  "version": "1.0.0",
+  "description": "> Variante **CORREGIDA**. Consulta [la comparación de modalidades](docs/comparison.md).",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "aws-cdk": "2.1141.0"
+  }
+}

@@ -923,7 +923,8 @@ if __name__ == "__main__":
             print(f"Validación: el documento parece ser un aviso de privacidad "
                   f"(confianza: {validacion['confianza']}).")
 
-        db_vectorial = fase_2_vectorizacion(chunks)
+        # Full-document evaluation does not query the vector store.
+        db_vectorial = None if doc_completo else fase_2_vectorizacion(chunks)
         chain = construir_chain(args.modelo)
 
         reglas_ejecutadas = [dict(r) for r in DICCIONARIO_LFPDPPP]

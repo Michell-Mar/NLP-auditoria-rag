@@ -1,0 +1,5 @@
+*
+!Dockerfile
+!requirements.txt
+!audito_rag_pdf.py
+!worker.py

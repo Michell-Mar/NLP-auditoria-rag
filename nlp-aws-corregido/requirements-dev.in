@@ -1,0 +1,13 @@
+-r app/requirements.in
+aws-cdk-lib==2.260.0
+constructs>=10,<11
+pytest>=8,<9
+# Needed to run tests/test_webapp*.py and tests/test_serverless_app.py --
+# webapp/, webapp-pdf/ and serverless/ each pin their own runtime versions in
+# their own requirements.txt; these ranges only need to be good enough for
+# the test suite to import and exercise them.
+fastapi>=0.115,<1
+httpx>=0.27,<1
+mangum>=0.17,<1
+python-multipart>=0.0.9,<1
+reportlab>=4.0,<6

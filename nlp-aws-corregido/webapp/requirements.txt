@@ -1,0 +1,7 @@
+# Hand-written (not pip-compiled like app/requirements.txt). Pin exact
+# versions with pip-compile if you want the same reproducibility guarantees
+# as the rest of this repo.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9,<1
+boto3>=1.34
