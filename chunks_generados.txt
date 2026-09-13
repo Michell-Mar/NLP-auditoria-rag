@@ -1,311 +1,583 @@
 --- CHUNK 1 ---
-Aviso de Privacidad Integral  
-Campus México  
-(ALUMNOS-VERSIÓN INTERNET)  
-  
-Centros Culturales de México, A.C., propietaria de la Universidad Panamericana Campus  
-México (en lo sucesivo “UP México”), con domicilio en la calle Jerez No. 10, Col. Insurgentes 
-Mixcoac, Alcaldía Benito Juárez, C.P. 03920, Ciudad de México, es la responsable del uso y 
-protección de sus datos personales y al respecto le informa lo siguiente:  
-  
-Dirección de correo electrónico en la que puede contactarse con nuestro líder de 
-privacidad  
-Para todo lo relacionado con el tratamiento y protección de sus datos personales, usted podrá 
-contactarse con nuestro líder de privacidad enviando un correo electrónico a la siguiente 
-dirección: mx_derechosarco@up.edu.mx
+1. EL RESPONSABLE DEL TRATAMIENTO DE LOS DATOS PERSONALES.
+BANCOPPEL, S. A., INSTITUCIÓN DE BANCA MÚLTIPLE (en lo sucesivo 
+“Bancoppel” o el “Responsable”) llevará a cabo el tratamiento de los datos 
+personales que usted nos proporcione y se encuentren bajo nuestro control y 
+ámbito de decisión razonable, en el entendido de que durante el tratamiento 
+estableceremos las medidas necesarias para cumplir con los principios de 
+licitud, calidad, consentimiento, información, finalidad, lealtad, proporcionalidad 
+y responsabilidad que marca la LFPDPPP y su reglamento.
 ---------------------
 
 --- CHUNK 2 ---
-contactarse con nuestro líder de privacidad enviando un correo electrónico a la siguiente 
-dirección: mx_derechosarco@up.edu.mx  
-  
-Finalidades para las que utilizaremos sus datos personales  
-Su información personal será utilizada para las siguientes finalidades principales, las cuales son 
-necesarias en relación con los servicios educativos que le proporcionaremos:   
-  
-• Validar su información y documentación.  
-• Inscribirlo a la UP México, darlo de alta en nuestros sistemas, integrar su expediente 
-académico, y expedirle su credencial de alumno.  
-• Darle información y proporcionarle los servicios educativos que ofrece la UP México, de 
-acuerdo con el programa académico al que se inscribió, así como contactarlo con
+2. DOMICILIO DEL RESPONSABLE.
+El domicilio de Bancoppel, para todos los efectos aplicables al presente Aviso de 
+Privacidad y demás cuestiones relacionadas con el mismo, se encuentra ubicado 
+en Avenida Insurgentes Sur No. 553, Piso 6, Colonia Escandón II,  Demarcación 
+Territorial Miguel Hidalgo, Ciudad de México, México, C.P. 11800.
 ---------------------
 
 --- CHUNK 3 ---
-• Darle información y proporcionarle los servicios educativos que ofrece la UP México, de 
-acuerdo con el programa académico al que se inscribió, así como contactarlo con 
-relación a los trámites administrativos correspondientes a sus estudios.  
-• Llevar control de acceso vehicular.  
-• Invitarlo y, en su caso, registrarlo para que participe en actividades extracurriculares con 
-el objeto de contribuir a su formación integral.  
-• Contactarlo con relación a las actividades académicas, culturales, deportivas o religiosas 
-en las que participe, haya participado, o esté interesado en participar.  
-• Prestarle material para actividades académicas y extracurriculares.  
-• Recibirle pagos, emitirle comprobantes de pago, estados de cuenta, así como
+3. DATOS PERSONALES.
+Los datos personales que usted libre y voluntariamente proporcione a Bancoppel 
+por cualquier medio que pongamos a su disposición, o que lleguen a nosotros 
+a través de medios de acceso público, o por cualquier otra fuente lícita (en lo 
+sucesivo y en su conjunto “Datos Personales”) considerando en todo momento 
+los intereses que le asisten en términos de la LFPDPPP y su Reglamento, podrán 
+incluir:
+ 
+Datos Personales Generales: Nombre, apellidos, género, fecha de nacimiento, 
+entidad y país de nacimiento, nacionalidad, clave de elector, copia de su 
+identificación oficial y fotografía,  domicilio actualizado, ocupación, Clave 
+Única del Registro de Población (C.U.R.P.), firma digitalizada o fiable, teléfono
 ---------------------
 
 --- CHUNK 4 ---
-• Prestarle material para actividades académicas y extracurriculares.  
-• Recibirle pagos, emitirle comprobantes de pago, estados de cuenta, así como 
-documentar y realizar gestiones de cobranza en caso de adeudo. Lo anterior también 
-podrá realizarse con aquellas personas que se hagan cargo de cubrir los costos de los 
-servicios que le brindamos a Usted.  
-• Brindarle apoyo académico con herramientas tecnológicas.  
-• Crear directorio de alumnos.  
-• Conocer su perfil para elaborar estrategias didácticas, brindarle asesorías y llevar control 
-de las mismas.   
-• Brindarle apoyo psicopedagógico.  
-• Darle seguimiento a su avance académico.  
-• Gestionar solicitudes de beca o financiamiento.  
-• Realizar gestiones administrativas y de servicios escolares.
+[3. DATOS PERSONALES.]
+identificación oficial y fotografía,  domicilio actualizado, ocupación, Clave 
+Única del Registro de Población (C.U.R.P.), firma digitalizada o fiable, teléfono 
+fijo, teléfono celular, correo, nombre completo del Administrador Único y/o 
+apoderado (s) legal (es) en términos del instrumento notarial proporcionado 
+a Bancoppel, identificación oficial del administrador único y/o apoderado (s) 
+legal (es), entre otros de una persona moral, nombre completo de las personas 
+que administren la sociedad en términos del acta constitutiva correspondiente, 
+imágenes de los Titulares captadas por las cámaras de seguridad instaladas en 
+nuestras sucursales, en cajeros automáticos y en el área de promotoría, datos 
+de contacto de referencias personales, parentesco con el Titular que contrata
 ---------------------
 
 --- CHUNK 5 ---
-• Brindarle apoyo psicopedagógico.  
-• Darle seguimiento a su avance académico.  
-• Gestionar solicitudes de beca o financiamiento.  
-• Realizar gestiones administrativas y de servicios escolares.  
-• Practicarle, registrar y revisar sus evaluaciones.  
-• Almacenar y elaborar controles de sus calificaciones e historial académico.  
-• Elaborar y archivar su historial médico para prevenir contingencias y brindarle apoyo en 
-caso de que tenga necesidades especiales de salud, así como brindarle atención 
-médica.  
-• Realización de sus prácticas profesionales.
+[3. DATOS PERSONALES.]
+nuestras sucursales, en cajeros automáticos y en el área de promotoría, datos 
+de contacto de referencias personales, parentesco con el Titular que contrata 
+alguno de los servicios o productos de Bancoppel, datos de geolocalización, 
+actividad profesional o giro del negocio al que se dedique y datos de la misma 
+naturaleza y exclusivamente bajo esta categoría.
+Datos Financieros y/o Patrimoniales:  Registro Federal de Contribuyentes 
+(R.F.C.), número de seguridad social (IMSS), información financiera o patrimonial 
+relacionada con bienes muebles o inmuebles propiedad del titular, historial 
+crediticio, CLABE bancaria movimientos en cuenta, comprobantes de ingresos, 
+egresos, cuentas bancarias y comerciales, depósitos a la vista e inversiones,
 ---------------------
 
 --- CHUNK 6 ---
-• Efectuar trámites administrativos relacionados con  sus estudios, equivalencia y 
-revalidación de estudios, servicio social, titulación y expedición de cédulas, internamente 
-y ante las autoridades educativas.  
-• Enviarle comunicaciones internas sobre acontecimientos de la vida universitaria.  
-• Realizar trámites y gestiones relacionados con seguros.    
-• Conocer y atender sus dudas, comentarios y sugerencias en relación con las actividades 
-curriculares y extracurriculares ofrecidas por la UP México.  
-• Realizarle un estudio socioeconómico para efectos de beca o financiamiento.  
-• Apoyarlo para la obtención de alojamiento.  
-• Invitarlo y, en su caso, inscribirlo a programas de intercambio académico, así como darle
+[3. DATOS PERSONALES.]
+crediticio, CLABE bancaria movimientos en cuenta, comprobantes de ingresos, 
+egresos, cuentas bancarias y comerciales, depósitos a la vista e inversiones,  
+bienes muebles e inmuebles, , historial crediticio, avales otorgados,  así como 
+datos que permitan estimar su solvencia económica y  capacidad de pago y 
+conducta crediticia.
+Datos Sensibles: Datos sobre su estado de salud y características físicas 
+y fisiológicas: la huella digital, biometría facial y reconocimiento de voz, así 
+como grabación de voz y video. Como parte del proceso de alta de clientes 
+y/o de la relación jurídica existente o pasada, Bancoppel podrá solicitarle y/o 
+conservará copias de la documentación en donde consten o relacionada con 
+los Datos Personales, misma que será igualmente resguardada con las medidas
 ---------------------
 
 --- CHUNK 7 ---
-• Apoyarlo para la obtención de alojamiento.  
-• Invitarlo y, en su caso, inscribirlo a programas de intercambio académico, así como darle 
-el seguimiento escolar y administrativo a su participación en dichos programas.  
-• Video vigilancia, por razones de seguridad.   
-• Videograbación, con motivo de la prestación de servicios educativos que contrate con 
-nosotros y que se realicen a través de herramientas digitales haciendo uso del internet 
-y bajo la modalidad de Clases en línea.  
-• Videograbación, con motivo de la realización de exámenes profesionales realizados en 
-línea y a distancia.  
-• Cumplir con la normatividad aplicable y requerimientos de las autoridades con base en 
-una ley.  
-  
-Adicionalmente, su información personal será utilizada con las siguientes finalidades
+[3. DATOS PERSONALES.]
+conservará copias de la documentación en donde consten o relacionada con 
+los Datos Personales, misma que será igualmente resguardada con las medidas 
+de seguridad técnicas, administrativas y físicas necesarias para proteger sus 
+Datos Personales. Para cumplir con las obligaciones legalmente adquiridas con 
+usted, Bancoppel tratará datos personales de identificación y de contacto de 
+terceros que nos serán proporcionados por usted, en calidad de referencias 
+personales, por lo que usted se obliga a informar a dichos terceros sobre el 
+tratamiento de sus datos personales y el contenido de este Aviso de Privacidad. 
+Es responsabilidad de los Titulares de los Datos Personales, el garantizar 
+que los datos que faciliten a Bancoppel sean veraces y completos, así
 ---------------------
 
 --- CHUNK 8 ---
-• Cumplir con la normatividad aplicable y requerimientos de las autoridades con base en 
-una ley.  
-  
-Adicionalmente, su información personal será utilizada con las siguientes finalidades 
-secundarias:  
-    
-• Contactar en caso de emergencia a las personas indicadas como referencia.  
-• Enviarle felicitaciones por su cumpleaños o logros conseguidos.  
-• Enviarle información promocional de nuestra oferta académica y cultural.  
-• Divulgar su imagen y nombre, así como en su caso, datos académicos y laborales para 
-efectos promocionales y estadísticos de la UP México.    
-• Solicitar su colaboración para la elaboración de rankings, acreditaciones, y temas 
-promocionales de la UP México.  
-• Apoyarlo para obtener o cambiar de empleo.
+[3. DATOS PERSONALES.]
+Es responsabilidad de los Titulares de los Datos Personales, el garantizar 
+que los datos que faciliten a Bancoppel sean veraces y completos, así 
+como de notificar a Bancoppel de cualquier modificación a los mismos para 
+mantener su información actualizada.
 ---------------------
 
 --- CHUNK 9 ---
-• Solicitar su colaboración para la elaboración de rankings, acreditaciones, y temas 
-promocionales de la UP México.  
-• Apoyarlo para obtener o cambiar de empleo.  
-• Realizar encuestas y obtener su retroalimentación para mejorar nuestros servicios.  
-• Validar su participación en diversas publicaciones, colaboraciones y estudios realizados.  
-     
-Si usted no desea que sus datos personales sean tratados para las finalidades secundarias 
-señaladas, puede negarnos su consentimiento desde este momento enviando un correo 
-electrónico a nuestro líder de privacidad, en el que especifique la o las finalidades secundarias 
-para las que no desea que utilicemos sus datos personales. Su negativa no será motivo para
+4. FINALIDAD DEL TRATAMIENTO.
+Bancoppel utilizará los Datos Personales que se recaban para los siguientes 
+fines:
+a) Finalidades Primarias o Finalidades Necesarias: Son aquellas que dan 
+origen o que son necesarias para la consecución y cumplimiento de una relación 
+jurídica (potencial, presente o pasada) entre usted y Bancoppel, es decir, para: 
+(i)Identificar a la persona que solicita alguno de los productos ofertados por 
+Bancoppel; (ii) Contar con los elementos necesarios para realizar un análisis que 
+determine si el solicitante es viable para que Bancoppel le proporcione el producto 
+solicitado; (iii)Administrar, proveer, operar y dar seguimiento a los servicios que 
+solicita o contrata con Bancoppel; (iv) Formalizar la relación contractual entre
 ---------------------
 
 --- CHUNK 10 ---
-electrónico a nuestro líder de privacidad, en el que especifique la o las finalidades secundarias 
-para las que no desea que utilicemos sus datos personales. Su negativa no será motivo para 
-dejar de brindarle los demás servicios, y tendrá un plazo de cinco días hábiles para manifestarla.  
-  
-Datos personales que se recabarán   
-Para llevar a cabo las finalidades descritas en el presente aviso de privacidad, utilizaremos las 
-siguientes categorías de datos personales:   
-  
-• Identificación y contacto.  
-• Laborales.  
-• Académicos.  
-• Financieros y patrimoniales.  
-• Datos personales considerados como sensibles: Religión, salud, discapacidades y 
-lengua indígena. Estos dos últimos tipos de datos sensibles se recaban para cumplir con
+[4. FINALIDAD DEL TRATAMIENTO.]
+solicitado; (iii)Administrar, proveer, operar y dar seguimiento a los servicios que 
+solicita o contrata con Bancoppel; (iv) Formalizar la relación contractual entre 
+Bancoppel y el Titular; (v) Llevar a cabo el alta, renovación o baja de cliente en 
+los sistemas de Bancoppel, incluyéndolo en nuestra base de datos e integrando 
+los expedientes necesarios, ya sea directamente o a través de un tercero; (vi) 
+Enviar comunicaciones relacionadas con los servicios contratados, así como 
+estados de cuenta e información correspondiente al manejo de los productos 
+y servicios que contrate de Bancoppel; (vii) Elaborar y/o modificar contratos, 
+convenios, acuerdos comerciales y/o cualquier otro documento necesario para 
+crear, complementar, cumplir o dar por terminada cualquier relación comercial,
 ---------------------
 
 --- CHUNK 11 ---
-requerimientos de la SEP, entregándoselos de manera disociada para efectos 
-estadísticos.  
-  
-Le informamos que integraremos a su expediente académico los datos personales recabados 
-de usted durante el proceso de admisión.   
-  
-Así mismo le informamos que en este sitio se utilizan cookies y/o web beacons para obtener 
-información sobre la navegación en internet de su computadora. Estas cookies son gestionadas 
-por Centros Culturales de México A.C. y otros proveedores como Google, AdRoll y DoubleClick 
-para informar, optimizar y publicar anuncios basándose en las visitas anteriores a este sitio web. 
-Las técnicas que empleamos para la recolección de datos no incluyen información como su 
-nombre, correo electrónico, correo postal o número telefónico. Usted puede desactivar la función
+[4. FINALIDAD DEL TRATAMIENTO.]
+convenios, acuerdos comerciales y/o cualquier otro documento necesario para 
+crear, complementar, cumplir o dar por terminada cualquier relación comercial, 
+jurídica o de negocios que tenga usted con Bancoppel; (viii) Brindarle seguridad 
+y evitar posibles riesgos dentro de las instalaciones de Bancoppel; (ix) Atender 
+sus consultas, quejas, reclamaciones y/o sugerencias; (x) Gestiones dirigidas 
+a mantener actualizados, correctos y completos sus Datos Personales; (xi) 
+Realizar cualquier evaluación o análisis que sea requerido para la prestación de 
+los servicios de Bancoppel;(xii) Llevar a cabo los cobros correspondientes por 
+los servicios proporcionados por Bancoppel y cualesquier gestiones de cobro 
+por adeudos pendientes de pago; (xiii)Acreditar que el Titular es apto para
 ---------------------
 
 --- CHUNK 12 ---
-Las técnicas que empleamos para la recolección de datos no incluyen información como su 
-nombre, correo electrónico, correo postal o número telefónico. Usted puede desactivar la función 
-cookies en su navegador (en las opciones de seguridad) para no ser sujeto de las acciones 
-emprendidas con los datos recabados.  
-  
-Transferencia de sus datos personales  
-Sus datos personales podrán ser transferidos a las siguientes personas físicas o morales, en 
-cuyos casos no requerimos nos otorgue consentimiento:  
-  
-• Empresas aseguradoras con las que tengamos un contrato celebrado o por celebrar, 
-para otorgarle beneficios de seguros.  
-• Empresas o instituciones académicas con las que tengamos un contrato celebrado o por
+[4. FINALIDAD DEL TRATAMIENTO.]
+los servicios proporcionados por Bancoppel y cualesquier gestiones de cobro 
+por adeudos pendientes de pago; (xiii)Acreditar que el Titular es apto para 
+obligarse solidariamente; (xiv) Verificar los Datos Personales contenidos en: (a)la 
+credencial para votar y al menos uno de los datos biométricos recabados contra 
+la base de datos de información del Instituto Nacional Electoral; (b) el pasaporte 
+contra la base de datos de la Secretaria de Relaciones Exteriores; o (c) de darse 
+el caso, alguna otra autoridad financiera o dependencia federal con la finalidad 
+de confirmar y verificar la coincidencia de los datos; (xv) La evaluación y análisis 
+de la solicitud de crédito presentada por  un tercero (el “Solicitante”) en la cual
 ---------------------
 
 --- CHUNK 13 ---
-para otorgarle beneficios de seguros.  
-• Empresas o instituciones académicas con las que tengamos un contrato celebrado o por 
-celebrar, para otorgarle beneficios académicos o económicos en relación con sus 
-estudios.  
-• Universidades extranjeras, para efectos de intercambio académico, con las que 
-tengamos un contrato celebrado o por celebrar para ofrecerle este beneficio.  
-• A familias inscritas en el Programa de Housing, para apoyarlo a encontrar alojamiento.  
-• Autoridades a las que debamos hacerlo en virtud de una ley, con la finalidad de cumplir 
-con la normatividad correspondiente.  
-• Sociedades del sistema UP-IPADE para invitaciones, promociones, recaudación de 
-fondos.  
-• Entidades y autoridades académicas, con la finalidad de comprobar su nivel de estudios,
+[4. FINALIDAD DEL TRATAMIENTO.]
+de confirmar y verificar la coincidencia de los datos; (xv) La evaluación y análisis 
+de la solicitud de crédito presentada por  un tercero (el “Solicitante”) en la cual 
+el Titular tenga el  carácter de obligado solidario y/o cónyuge de éste último; 
+(xvi) Acreditar que el Titular es apto para obligarse solidariamente  respecto de 
+los servicios o productos que contrate el Solicitante con  el Responsable; (xvii) 
+Representación de la persona moral en contratos y demás figuras jurídicas del 
+Derecho en términos del instrumento notarial correspondiente (xviii) Elaborar 
+perfiles de clientes para el ofrecimiento de productos y servicios bancarios y 
+financieros así como para la generación de modelos de información y/o perfiles de
 ---------------------
 
 --- CHUNK 14 ---
-• Sociedades del sistema UP-IPADE para invitaciones, promociones, recaudación de 
-fondos.  
-• Entidades y autoridades académicas, con la finalidad de comprobar su nivel de estudios, 
-así como convalidar la participación de nuestros colaboradores en el desarrollo de sus 
-publicaciones.  
-  
-Asimismo, sus datos personales (que no sean financieros, patrimoniales o sensibles) podrán 
-ser transferidos a las siguientes personas físicas o morales, en cuyos casos sí requerimos que 
-nos otorgue su consentimiento:  
-  
-• Instituciones académicas o no académicas que le hayan expedido certificados, títulos o 
-diplomas, para validar dicha información.   
-• Al público asistente a eventos extracurriculares en los usted participe, para identificarlo
+[4. FINALIDAD DEL TRATAMIENTO.]
+perfiles de clientes para el ofrecimiento de productos y servicios bancarios y 
+financieros así como para la generación de modelos de información y/o perfiles de 
+comportamiento actual y predictivo y (xix) Para celebrar actos de administración 
+y celebrar títulos y operaciones de crédito; así como (xx) Dar cumplimiento a la 
+legislación aplicable a las Instituciones de Crédito.
+b) Finalidades Secundarias o Finalidades No Necesarias: Son aquellas que 
+no son necesarias para la existencia y cumplimiento de la relación jurídica que el 
+Titular tiene con el Responsable, sin embargo, son complementarias e importantes, 
+es decir, para(i) fines mercadológicos, publicitarios o de prospección comercial 
+respecto de productos y servicios que ofrecemos, propios o de terceros; (ii)
 ---------------------
 
 --- CHUNK 15 ---
-diplomas, para validar dicha información.   
-• Al público asistente a eventos extracurriculares en los usted participe, para identificarlo 
-y contactarlo, así como a empresas e instituciones que deseen contactarlo para invitarlo 
-a eventos o actividades académicas, culturales, deportivas o religiosas.  
-• Empresas reclutadoras para apoyarlo a encontrar o cambiar de empleo.  
-• Instituciones que organizan actividades deportivas, para darlo de alta en torneos dentro 
-de nuestras selecciones representativas.  
-  
-Usted puede manifestar su negativa para las trasferenc ias de las que requerimos su 
-consentimiento, enviando un correo electrónico a nuestro líder de privacidad. Si no lo hace, 
-entenderemos que nos ha otorgado su consentimiento.
+[4. FINALIDAD DEL TRATAMIENTO.]
+es decir, para(i) fines mercadológicos, publicitarios o de prospección comercial 
+respecto de productos y servicios que ofrecemos, propios o de terceros; (ii) 
+Realizar encuestas de servicio, con el objetivo de evaluar y mejorar la calidad de 
+los productos y servicios que ofrecemos;(iii)) Participar en sorteos, promociones, 
+concursos y encuestas.
+En caso de no estar de acuerdo con las Finalidades Secundarias o No Necesarias, 
+le informamos que usted contará con un plazo no mayor a (5) cinco días naturales 
+contados a partir de la fecha en que sea puesto a su disposición el presente 
+Aviso de Privacidad para externarnos su negativa de acuerdo a lo establecido 
+en el punto 7 del presente Aviso de Privacidad. Quedan a salvo los derechos del
 ---------------------
 
 --- CHUNK 16 ---
-Medidas de seguridad para proteger su información personal   
-Su información personal será resguardada bajo estricta confidencialidad, y para prevenir 
-razonablemente el uso o divulgación indebida de la misma, hemos implementado medidas de 
-seguridad físicas, técnicas y administrativas de conformidad con la normatividad aplicable. En 
-particular, contamos con un líder de privacidad en cada uno de los campus de la Universidad 
-Panamericana y un oficial de privacidad del Sistema UP-IPADE, una política de privacidad, 
-cursos de capacitación a nuestros empleados, acceso restringido a información personal sólo 
-a usuarios autorizados, un inventario de datos personales (debidamente clasificados por 
-categoría de datos) y de los sistemas de tratamiento, análisis de riesgo y cláusulas
+[4. FINALIDAD DEL TRATAMIENTO.]
+Aviso de Privacidad para externarnos su negativa de acuerdo a lo establecido 
+en el punto 7 del presente Aviso de Privacidad. Quedan a salvo los derechos del 
+Titular para ejercer sus derechos a la revocación del consentimiento u oposición, 
+en caso de que no manifieste la negativa para el tratamiento de sus datos 
+personales, previo a la entrega de los mismos o de su aprovechamiento.
+Los Titulares que pretendan contratar alguno de los servicios o productos 
+ofrecidos por Bancoppel y proporcionen a éste último los Datos Personales 
+de otros Titulares con el carácter de beneficiarios, Terceros autorizados 
+y Titulares con el carácter de referencias personales o laborales, deberán 
+notificar a éstos Titulares haber proporcionado sus Datos Personales a
 ---------------------
 
 --- CHUNK 17 ---
-a usuarios autorizados, un inventario de datos personales (debidamente clasificados por 
-categoría de datos) y de los sistemas de tratamiento, análisis de riesgo y cláusulas 
-contractuales.  
-  
-Derechos ARCO y revocación de su consentimiento  
-En los términos permitidos por la normatividad aplicable, es su derecho conocer qué datos 
-personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos 
-(Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso 
-de que esté desactualizada, sea inexacta o incompleta (Rectificación); que la eliminemos de 
-nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada 
-conforme a las disposiciones previstas en la normatividad aplicable (Cancelación); y como
+[4. FINALIDAD DEL TRATAMIENTO.]
+y Titulares con el carácter de referencias personales o laborales, deberán 
+notificar a éstos Titulares haber proporcionado sus Datos Personales a 
+Bancoppel y el contenido del presente Aviso de Privacidad, lo anterior, con 
+independencia de la notificación que Bancoppel hará a dichos Titulares del 
+Aviso de Privacidad al primer contacto que tenga con éstos últimos.
+ 
+En relación a los Datos Personales de aquellos Titulares que en el pasado 
+otorgaron sus datos a Bancoppel y que actualmente ya no tienen una relación 
+con éste último así como de los beneficiarios y referencias de dichos Titulares, 
+se les informa que Bancoppel podría conservar sus Datos Personales con el 
+único propósito de determinar posibles responsabilidades en relación con su
 ---------------------
 
 --- CHUNK 18 ---
-nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada 
-conforme a las disposiciones previstas en la normatividad aplicable (Cancelación); y como 
-oponerse al uso de sus datos personales para fines específicos (Oposición). Estos derechos se 
-conocen como derechos ARCO.   
-  
-Asimismo, usted tiene el derecho de revocar en cualquier momento el consentimiento que en 
-su caso nos haya otorgado para el tratamiento de sus datos personales, salvo que no sea 
-procedente en términos de la normatividad aplicable, lo cual haríamos de su conocimiento en 
-nuestra respuesta a su solicitud de revocación.  
-  
-Para conocer el procedimiento, requisitos y plazos para el ejercicio de los derechos ARCO, así
+[4. FINALIDAD DEL TRATAMIENTO.]
+se les informa que Bancoppel podría conservar sus Datos Personales con el 
+único propósito de determinar posibles responsabilidades en relación con su 
+tratamiento, hasta por el plazo de prescripción legal que corresponda, por lo 
+que, una vez transcurrido dicho plazo, sus Datos Personales serán suprimidos.
 ---------------------
 
 --- CHUNK 19 ---
-nuestra respuesta a su solicitud de revocación.  
-  
-Para conocer el procedimiento, requisitos y plazos para el ejercicio de los derechos ARCO, así 
-como del derecho de revocación, le agradeceremos se ponga en contacto con nuestro líder de 
-privacidad de la UP México, a la mencionada dirección de correo electrónico. Si desea ejercer 
-alguno o algunos de estos derechos, deberá presentar la solicitud respectiva a nuestro líder de 
-privacidad vía correo electrónico, quien dará trámite a la misma y atenderá cualquier comentario, 
-duda o queja que pudiera tener respecto al tratamiento de su información personal.  
-  
-Nuestro líder de privacidad velará en todo momento por la protección de su información personal
+5. PROTECCIÓN DE LOS DATOS PERSONALES.
+Bancoppel hace del conocimiento de los Titulares que los Datos Personales 
+que se traten, serán manejados de manera CONFIDENCIAL, limitando su uso 
+a las finalidades descritas en el presente Aviso de Privacidad. Asimismo, las 
+bases de datos de Bancoppel en donde constan los Datos Personales de los 
+Titulares solamente serán operadas por el personal autorizado de Bancoppel 
+cuyas funciones se encuentran reguladas por las políticas institucionales 
+de este último. Asimismo, Bancoppel manifiesta que tiene implementadas 
+políticas, procedimientos y medidas de seguridad que permiten proteger los 
+Datos Personales de los Titulares contra cualquier daño, pérdida, alteración, 
+destrucción o uso, acceso o tratamiento no autorizado, por lo cual queda
 ---------------------
 
 --- CHUNK 20 ---
-duda o queja que pudiera tener respecto al tratamiento de su información personal.  
-  
-Nuestro líder de privacidad velará en todo momento por la protección de su información personal 
-en cumplimiento con la normatividad aplicable. Asimismo, le informamos que el Instituto 
-Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales es la 
-autoridad encargada de vigilar por la debida observancia de las disposiciones legales en materia 
-de protección de datos personales.  
-   
-Formas en que puede limitar el uso o divulgación de la información personal   
-Adicionalmente al procedimiento contemplado en la sección inmediata anterior, usted puede 
-limitar el uso o divulgación de su información personal, enviando un correo electrónico a nuestro
+[5. PROTECCIÓN DE LOS DATOS PERSONALES.]
+Datos Personales de los Titulares contra cualquier daño, pérdida, alteración, 
+destrucción o uso, acceso o tratamiento no autorizado, por lo cual queda 
+prohibido su divulgación ilícita, limitando su uso a terceros, conforme a lo previsto 
+en el presente documento.
+Actualización Octubre 2025
+2 de 3
+Aviso de Privacidad para Clientes, Usuarios, Obligados Solidarios, y Titulares Interesados en Contratar un Servicio o Producto ofrecido por Bancoppel
 ---------------------
 
 --- CHUNK 21 ---
-Adicionalmente al procedimiento contemplado en la sección inmediata anterior, usted puede 
-limitar el uso o divulgación de su información personal, enviando un correo electrónico a nuestro 
-líder de privacidad a la dirección arriba indicada, so licitando su inscripción al “Listado de 
-Exclusión Publicitaria”, con el objeto de asegurarse que su información no será utilizada para 
-fines mercadotécnicos o publicitarios.  
-  
-Cambios al aviso de privacidad   
-La UP México podrá modificar y/o actualizar el presente aviso de privacidad, informándole sobre 
-cualquier modificación o actualización a través de nuestra página de Internet www.up.edu.mx
+6. TEMPORALIDAD Y TRANSFERENCIAS DE DATOS PERSONALES.
+La temporalidad del manejo de los Datos Personales de los Titulares dependerá 
+de la relación que tenga celebrada con Bancoppel, así como de las obligaciones 
+exigidas por la legislación aplicable y las autoridades competentes. Bancoppel 
+podrá revelar o transferir sus Datos Personales sin su consentimiento, en todos 
+los casos de excepción previstos en la legislación aplicable.
+Bancoppel dará acceso a los Datos Personales de los Titulares (a través de 
+remisiones) a aquellas personas que tengan el carácter de Persona encargada  
+como pueden ser prestadores de servicios o socios de negocios con los que 
+Bancoppel tenga una relación jurídica y que derivada de la misma necesiten
 ---------------------
 
 --- CHUNK 22 ---
-Consentimiento  
-Le informamos que previamente a que recabemos sus datos financieros, patrimoniales o 
-sensibles, le solicitaremos nos otorgue su consentimiento expreso y por escrito del presente 
-aviso de privacidad integral.
+[6. TEMPORALIDAD Y TRANSFERENCIAS DE DATOS PERSONALES.]
+como pueden ser prestadores de servicios o socios de negocios con los que 
+Bancoppel tenga una relación jurídica y que derivada de la misma necesiten 
+conocer dicha información, siempre que ellos asuman el compromiso de 
+mantenerla bajo un estricto orden de confidencialidad y seguridad y se 
+comprometan a cumplir los términos y condiciones del presente Aviso de 
+Privacidad.
+Asimismo, Bancoppel podrá transferir sus Datos Personales a terceros 
+proveedores seleccionados con lo que Bancoppel celebre contratos o para 
+referencias con otros terceros que busquen sus servicios y/o productos, entre 
+los que se encuentran:
+---------------------
+
+--- CHUNK 23 ---
+1. Cualesquier sociedad controladora, controlada, subsidiaria y/o afiliada de 
+Grupo Coppel y que opere bajo los mismos estándares, procesos y/o políticas 
+internas bajo los que opera Bancoppel
+---------------------
+
+--- CHUNK 24 ---
+2. Proveedores que prestan servicio a Bancoppel para el mantenimiento o 
+cumplimiento de la relación jurídica con los clientes, para las finalidades que 
+se mencionan a continuación, de forma enunciativa mas no limitativa: (i) 
+Atención telefónica a Clientes; (ii) Procuración de cobranza por medio de CAT; 
+(iii) Cobranza y órdenes de supervisión; (iv) Impresión de estados de cuenta; 
+(v) Procesamiento de operaciones crediticias; (vi) Fines mercadológicos, 
+publicitarios o de prospección comercial respecto de productos y servicios que 
+ofrecemos, propios o de terceros; (vii) Analítica de datos; (viii) Elaborar perfiles de 
+clientes para el ofrecimiento de productos y servicios bancarios y financieros así 
+como para la generación de modelos de información; Perfiles de comportamiento
+---------------------
+
+--- CHUNK 25 ---
+[2. Proveedores que prestan servicio a Bancoppel para el mantenimiento o]
+clientes para el ofrecimiento de productos y servicios bancarios y financieros así 
+como para la generación de modelos de información; Perfiles de comportamiento 
+actual y predictivo de los Clientes y/o (ixi) Administración de Cartera.
+---------------------
+
+--- CHUNK 26 ---
+3. Sociedades de información crediticia.
+---------------------
+
+--- CHUNK 27 ---
+4. Terceros con quien se celebre un contrato de venta o cesión de cartera.
+---------------------
+
+--- CHUNK 28 ---
+5. Terceros que proporcionen información relacionada con el servidor celular, 
+lo que incluye operador, pago del servicio celular y servicios adicionales y/o 
+recargas de saldo para el servicio celular o servicios adicionales, consumo, 
+hábitos de consumo y modelo del teléfono móvil y Apps.
+---------------------
+
+--- CHUNK 29 ---
+6. Terceros que proporcionen el servicio de envío de remesas del extranjero, 
+para su cobro dentro de la Republica Mexicana en cualquiera de las sucursales 
+de Bancoppel.
+---------------------
+
+--- CHUNK 30 ---
+7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS 
+TITULARES Y REVOCACIÓN DEL CONSENTIMIENTO.
+Los Titulares podrán ejercer los derechos de acceso, rectificación, cancelación y 
+oposición, los cuales le permiten: -Acceder a sus Datos Personales que obren en 
+poder de Bancoppel; -Rectificar cualquiera de sus Datos Personales que obren 
+en poder de Bancoppel cuando sean inexactos o incompletos; -Cancelar sus 
+Datos Personales que obren en poder de Bancoppel; -Oponerse al tratamiento 
+de sus Datos Personales que obren en poder de Bancoppel. Asimismo, el Titular 
+podrá revocar su consentimiento para el tratamiento de sus Datos Personales 
+que obren en poder de Bancoppel. Bancoppel en este acto informa a los
+---------------------
+
+--- CHUNK 31 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+podrá revocar su consentimiento para el tratamiento de sus Datos Personales 
+que obren en poder de Bancoppel. Bancoppel en este acto informa a los 
+Titulares que estos derechos los pueden hacer valer personalmente o a través de 
+su representante legal a través del procedimiento establecido en esta sección.
+Para el ejercicio de los derechos a los que se refiere el presente Aviso de 
+Privacidad, los Titulares deberán presentar una solicitud por escrito en cualquiera 
+de nuestras sucursales dirigida a la Subdirección de Operaciones de Bancoppel.
+Bancoppel en todos los casos dará respuesta a las solicitudes de los Titulares, 
+sin embargo, únicamente estará obligado a hacer efectivas dichas solicitudes 
+cuando no se actualice alguna de las excepciones contenidas en la LFPDPPP.
+---------------------
+
+--- CHUNK 32 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+sin embargo, únicamente estará obligado a hacer efectivas dichas solicitudes 
+cuando no se actualice alguna de las excepciones contenidas en la LFPDPPP. 
+En cualquier caso, la solicitud para el ejercicio de derechos ARCO deberá 
+contener: (i) Nombre del Titular, domicilio y un correo electrónico para que 
+Bancoppel le comunique la respuesta a su solicitud; (ii) Los documentos con los 
+que acredite su identidad o su personalidad en caso de la representación legal 
+del Titular (identificación oficial del Titular o del representante legal y poder de 
+éste último); (iii) La descripción clara y precisa de los Datos Personales respecto 
+de los que se busca ejercitar alguno de los derechos ARCO; (iv)cualquier otro 
+dato o documento que pueda facilitar la localización de los Datos Personales;
+---------------------
+
+--- CHUNK 33 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+de los que se busca ejercitar alguno de los derechos ARCO; (iv)cualquier otro 
+dato o documento que pueda facilitar la localización de los Datos Personales; 
+(v)Indicar las modificaciones a realizarse y/o las limitaciones al uso de los Datos 
+Personales, y aportar la documentación que sustente su petición; y (vi) Firma 
+al final del escrito y rubricada al calce de cada una de las hojas. Bancoppel 
+dará respuesta a la solicitud de un Titular respecto al ejercicio de los derechos 
+descritos en la presente sección, dentro de los veinte (20) días hábiles siguientes 
+contados a partir de que reciba la solicitud del Titular, en el entendido de que, si 
+resulta procedente su solicitud, ésta se hará efectiva dentro de los quince (15)
+---------------------
+
+--- CHUNK 34 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+contados a partir de que reciba la solicitud del Titular, en el entendido de que, si 
+resulta procedente su solicitud, ésta se hará efectiva dentro de los quince (15) 
+días hábiles siguientes a la fecha en que se comunique la respuesta. En caso de 
+que la información proporcionada en su solicitud resulte errónea o insuficiente, 
+o no se acompañen los documentos necesarios para acreditar su identidad o la 
+representación legal, Bancoppel, dentro de los 5 (cinco) días hábiles siguientes 
+a la recepción de su solicitud, requerirá que se subsanen las deficiencias para 
+poder dar trámite a la misma. Este requerimiento deberá ser atendido por usted 
+dentro de los 10 (diez) días hábiles siguientes a su recepción, de lo contrario
+---------------------
+
+--- CHUNK 35 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+poder dar trámite a la misma. Este requerimiento deberá ser atendido por usted 
+dentro de los 10 (diez) días hábiles siguientes a su recepción, de lo contrario 
+su solicitud se tendrá por no presentada. En caso de que el Titular atienda el 
+requerimiento de información, el plazo para que el Responsable dé respuesta a 
+la solicitud empezará a correr al día siguiente de que el Titular haya atendido el 
+requerimiento.Si transcurrido el término que señala la LFPDPPP y su reglamento, 
+Bancoppel no diera respuesta a su solicitud, usted podrá iniciar el procedimiento 
+de protección de derechos ARCO ante la Secretaría Anticorrupción y Buen 
+Gobierno, mediante los medios que esta secretaría ponga a su disposición.
+El Titular podrá revocar su consentimiento para el tratamiento de sus Datos
+---------------------
+
+--- CHUNK 36 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+Gobierno, mediante los medios que esta secretaría ponga a su disposición.
+El Titular podrá revocar su consentimiento para el tratamiento de sus Datos 
+Personales, sin efectos retroactivos, en todos aquellos casos en que dicha 
+revocación no suponga la imposibilidad de cumplir obligaciones derivadas de 
+una relación jurídica vigente entre el Titular y el Responsable. El procedimiento 
+para la revocación del consentimiento, en su caso, será el mismo que se explicó 
+anteriormente para el ejercicio de los derechos ARCO.
+Adicionalmente, el Titular podrá solicitar su inscripción al Registro Público de 
+Usuarios (REUS) ante la Comisión Nacional para la Protección y Defensa de los 
+Usuarios de Servicios Financieros para suspender la recepción de publicidad o
+---------------------
+
+--- CHUNK 37 ---
+[7. MEDIOS Y PROCEDIMIENTOS PARA EJERCER LOS DERECHOS DE LOS]
+Usuarios (REUS) ante la Comisión Nacional para la Protección y Defensa de los 
+Usuarios de Servicios Financieros para suspender la recepción de publicidad o 
+promociones de nuestros productos y servicios bancarios y financieros.
+---------------------
+
+--- CHUNK 38 ---
+8. MEDIOS PARA LIMITAR EL USO O DIVULGACIÓN DE SUS DATOS 
+PERSONALES.
+El Titular podrá limitar el uso o divulgación de sus Datos Personales mediante 
+la utilización de los medios habilitados por Bancoppel para dichos efectos, 
+mismos que consisten en (i) manifestar su negativa al tratamiento de sus Datos 
+Personales para las Finalidades Secundarias o No Necesarias en términos de la 
+sección 4 y 7 del presente Aviso de Privacidad; (ii) Ejercer sus derechos ARCO de 
+conformidad con lo establecido en el presente Aviso de Privacidad, la LFPDPPP 
+y su reglamento. En este sentido, resulta importante mencionar que, una vez que 
+el Titular ejerza alguno de los derechos previamente mencionados, Bancoppel 
+llevará a cabo las acciones correspondientes para atender su solicitud, en caso
+---------------------
+
+--- CHUNK 39 ---
+[8. MEDIOS PARA LIMITAR EL USO O DIVULGACIÓN DE SUS DATOS]
+el Titular ejerza alguno de los derechos previamente mencionados, Bancoppel 
+llevará a cabo las acciones correspondientes para atender su solicitud, en caso 
+de ser procedente, tales como incluir al Titular en el listado de exclusión que 
+corresponda de Bancoppel.
+En caso de requerir mayor información o tener dudas acerca de cómo hacer uso 
+de los mecanismos previamente mencionados, el Titular podrá comunicarse con 
+Bancoppel vía correo electrónico a nuestra Oficina de Datos Personales, cuyos 
+datos han sido proporcionados previamente.
+---------------------
+
+--- CHUNK 40 ---
+9. MEDIDAS DE SEGURIDAD Y CONTROL.
+Bancoppel tiene implementadas medidas de seguridad administrativas, técnicas 
+y físicas, derivadas de las mejores prácticas internacionales en cuanto a calidad 
+y seguridad en el interés de proteger sus Datos Personales contra daño, pérdida, 
+alteración, destrucción, uso, acceso o tratamiento no autorizado, mismas que 
+igualmente exigimos sean cumplidas por nuestros socios y aliados comerciales, 
+aun tratándose de servicios que prestan las empresas controladoras, controladas, 
+subsidiarias y/o afiliadas de Bancoppel.
+De igual forma, manifiesta su compromiso para comunicar el presente Aviso de 
+Privacidad a los terceros a los que transfiera sus Datos Personales para que 
+dichos terceros respeten en todo momento las obligaciones y responsabilidades
+---------------------
+
+--- CHUNK 41 ---
+[9. MEDIDAS DE SEGURIDAD Y CONTROL.]
+Privacidad a los terceros a los que transfiera sus Datos Personales para que 
+dichos terceros respeten en todo momento las obligaciones y responsabilidades 
+derivadas del presente Aviso de Privacidad, la LFPDPPP, su reglamento y los 
+Lineamientos del Aviso de Privacidad.
+---------------------
+
+--- CHUNK 42 ---
+10. USO DE COOKIES.
+Se informa a los Titulares que Bancoppel obtiene datos de identificación de 
+los usuarios que visitan su página de Internet, referentes a dirección IP, tipo 
+de navegador, sistema operativo utilizado, páginas específicas dentro del 
+sitio a través de las cuales se tuvo acceso, así como, el uso de cookies para 
+validar dispositivos móviles y presentación de la página inicial. Este tipo de 
+información es generalizada y sólo se utiliza para obtener información estadística 
+del comportamiento de navegación de nuestros visitantes con la finalidad de 
+monitorear su comportamiento como usuario de Internet, brindarle un mejor 
+servicio y experiencia de usuario al navegar en nuestra página, así como ofrecerle
+---------------------
+
+--- CHUNK 43 ---
+[10. USO DE COOKIES.]
+monitorear su comportamiento como usuario de Internet, brindarle un mejor 
+servicio y experiencia de usuario al navegar en nuestra página, así como ofrecerle 
+nuevos productos y servicios basados en sus preferencias. En el supuesto de 
+que usted haga uso de la página de internet de Bancoppel, se recabará la 
+siguiente información: (i) dirección IP; (ii) tipo de navegador; (iii) sistema operativo 
+utilizado; y (iv) páginas específicas dentro del sitio a través de las cuales se tuvo 
+acceso. Puede borrar y/o deshabilitar en el momento en que lo desee siguiendo 
+las instrucciones de su navegador de Internet. Le recordamos que la opción para 
+deshabilitar estas tecnologías puede variar según la plataforma tecnológica, el
+---------------------
+
+--- CHUNK 44 ---
+[10. USO DE COOKIES.]
+las instrucciones de su navegador de Internet. Le recordamos que la opción para 
+deshabilitar estas tecnologías puede variar según la plataforma tecnológica, el 
+navegador y el dispositivo móvil que utilice para visitar nuestro sitio.
+Bancoppel garantiza la protección, seguridad y confidencialidad que se 
+transmitan entre los usuarios y este Portal. El sello de confianza AMIPCI 
+(Asociación Mexicana de Internet) nos avala y refleja nuestro compromiso de 
+cumplir con la normatividad aplicable, el código de ética de la Asociación. El sitio 
+web de Bancoppel no reconoce de modo automático ningún dato referente a la 
+identidad de los visitantes de sus páginas. Asimismo, toda aquella información 
+que se transmita a través de terceros como es el caso de información en línea,
+---------------------
+
+--- CHUNK 45 ---
+[10. USO DE COOKIES.]
+identidad de los visitantes de sus páginas. Asimismo, toda aquella información 
+que se transmita a través de terceros como es el caso de información en línea, 
+será responsabilidad exclusiva de los terceros que transmitan la misma al usuario 
+por conducto de Bancoppel.
+Se le informa que nuestra página de Internet puede incluir enlaces a sitios web 
+de terceros ajenos al Responsable, respecto de los cuales este último no asume 
+ninguna titularidad, obligación o responsabilidad.
+3 de 3
+Aviso de Privacidad para Clientes, Usuarios, Obligados Solidarios, y Titulares Interesados en Contratar un Servicio o Producto ofrecido por Bancoppel
+---------------------
+
+--- CHUNK 46 ---
+11. CAMBIOS AL AVISO DE PRIVACIDAD.
+Bancoppel se reserva el derecho de efectuar en cualquier momento 
+modificaciones al presente aviso de privacidad, ya sea por actualizarse alguno 
+de los supuestos establecidos en la  que atiendan a algún cambio substancial en 
+Bancoppel, o bien derivado de cualquier modificación que afecte características 
+de los datos personales recabados, así como las finalidades previstas en este 
+Aviso de Privacidad.En caso de que exista algún cambio substancial en este 
+Aviso de Privacidad, se le comunicará mediante cualquiera de los siguientes 
+medios: (i) página de Internet de Bancoppel (www.Bancoppel.com); (ii) en 
+forma escrita; (iii) llamada telefónica; (iv) medios electrónicos; o (v) por cualquier
+---------------------
+
+--- CHUNK 47 ---
+[11. CAMBIOS AL AVISO DE PRIVACIDAD.]
+medios: (i) página de Internet de Bancoppel (www.Bancoppel.com); (ii) en 
+forma escrita; (iii) llamada telefónica; (iv) medios electrónicos; o (v) por cualquier 
+medio óptico, sonoro, visual u otro que la tecnología permita ahora o en lo futuro.
+No seremos responsables si usted no recibe la notificación sobre el cambio a 
+este Aviso de Privacidad, si existiere algún problema con su cuenta de correo 
+electrónico, de transmisión de datos por Internet, o por cualquier causa no 
+imputable a Bancoppel.
+Por su seguridad e información, le sugerimos ampliamente que revise 
+periódicamente el contenido de este Aviso de Privacidad (Aviso de 
+Privacidad Integral para Clientes).
+---------------------
+
+--- CHUNK 48 ---
+12. CONSENTIMIENTO.
+Los Datos Personales referidos en el presente Aviso de Privacidad y que sean 
+proporcionados a Bancoppel no garantizan al Titular la aprobación de algún 
+producto o servicio bancario ofrecido por Bancoppel, quien se reserva en todo 
+momento el derecho de autorizarle al Titular el correspondiente producto y/o 
+servicio bancario solicitado, siendo para ello indispensable el cumplimiento de 
+las políticas de Bancoppel.
+Consentimiento para Clientes Bancoppel, Obligados Solidarios y Titulares 
+interesados en contratar un servicio o producto ofrecido por Bancoppel:
+Autorizo expresamente que mis datos personales, datos financieros y datos 
+sensibles recabados como parte de la relación jurídica que establezca con
+---------------------
+
+--- CHUNK 49 ---
+[12. CONSENTIMIENTO.]
+sensibles recabados como parte de la relación jurídica que establezca con 
+Bancoppel, sean tratados conforme a lo establecido en el presente Aviso de 
+Privacidad.
+Nombre y firma del titular
 ---------------------
 
