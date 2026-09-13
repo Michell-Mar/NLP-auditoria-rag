@@ -5,7 +5,7 @@ __pycache__/
 .pytest_cache/
 *.pyc
 cdk.out/
-cdk-outputs.json
+cdk-outputs*.json
 downloads/
 *.pdf
 chunks_generados.txt
