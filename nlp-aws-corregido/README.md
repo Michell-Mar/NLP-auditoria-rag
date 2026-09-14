@@ -154,6 +154,31 @@ Los buckets tienen `RemovalPolicy.RETAIN` (se conservan con una expiración de 7
 sus objetos); bórralos a mano si ya no los necesitas. El secreto de Secrets Manager se creó
 fuera del stack y también se conserva.
 
+### 8. Cambiar de modelo de LLM
+
+Depende de qué tan grande sea el cambio:
+
+**Cambiar solo la versión del modelo de OpenAI** (p. ej. `gpt-4o` → `gpt-4.1`) ya está soportado
+sin tocar código: [`app/worker.py`](app/worker.py) lee el modelo de la variable de entorno
+`AUDIT_MODEL`, y esta se define en el CDK a partir del contexto `auditModel`
+([`infra/app.py`](infra/app.py), con default `gpt-4o`). Basta con:
+
+```bash
+npx cdk deploy NlpAuditStack -c openaiSecretArn="$NLP_SECRET_ARN" -c auditModel=gpt-4.1
+```
+
+No requiere reconstruir la imagen Docker del Worker; es solo un `cdk deploy` con el contexto
+nuevo. Vale la pena correr una auditoría de prueba después (paso 5) para validar que el prompt
+y los límites de `max_tokens` siguen dando buenos resultados con el modelo nuevo.
+
+**Cambiar de proveedor de LLM** (dejar OpenAI por otro) sí requiere trabajo de código: el
+proyecto está acoplado a `ChatOpenAI`/`OpenAIEmbeddings` de `langchain-openai`
+(`app/audito_rag_pdf.py`). Habría que sustituir esas clases por el equivalente del nuevo
+proveedor, revisar el manejo del secreto en Secrets Manager (hoy asume una API key de OpenAI),
+actualizar `app/requirements.in`/`.txt`, y luego sí reconstruir y volver a desplegar la imagen
+Docker del Worker con `cdk deploy NlpAuditStack`, porque en ese caso el cambio queda horneado
+en el contenedor y no en una variable de entorno.
+
 ## Contenido del repositorio
 
 | Ruta | Propósito |
