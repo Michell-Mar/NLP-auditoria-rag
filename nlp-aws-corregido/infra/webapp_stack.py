@@ -78,6 +78,11 @@ class WebappStack(Stack):
                                          removal_policy=RemovalPolicy.DESTROY)
 
         entorno_comun = {"JOBS_TABLE": jobs_table.table_name}
+        # Tope de auditorías que se pueden ENCOLAR desde ahora en adelante --
+        # ver USO_COUNTER_KEY/_registra_uso en serverless/app.py. Cambiar
+        # este valor y volver a desplegar sube o baja el tope sin resetear
+        # el contador (vive en un item aparte de la misma tabla Jobs).
+        max_audit_uses = self.node.try_get_context("maxAuditUses") or "10"
 
         api_fn = lambda_.DockerImageFunction(
             self, "ApiFn",
@@ -89,7 +94,8 @@ class WebappStack(Stack):
             log_group=log_group_api,
             environment={**entorno_comun,
                         "INPUT_BUCKET": audit_input_bucket_name,
-                        "JOBS_QUEUE_URL": queue.queue_url},
+                        "JOBS_QUEUE_URL": queue.queue_url,
+                        "MAX_AUDIT_USES": str(max_audit_uses)},
         )
 
         worker_fn = lambda_.DockerImageFunction(

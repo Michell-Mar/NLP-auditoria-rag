@@ -7,6 +7,7 @@ import threading
 from pathlib import Path
 
 import pytest
+from botocore.exceptions import ClientError
 from fastapi.testclient import TestClient
 from pypdf import PdfReader
 
@@ -39,9 +40,21 @@ class FakeTable:
         return {"Item": dict(item)} if item is not None else {}
 
     def update_item(self, Key, UpdateExpression, ExpressionAttributeValues,
-                    ExpressionAttributeNames=None):
+                    ExpressionAttributeNames=None, ConditionExpression=None):
         with self.lock:
             item = self.items.setdefault(Key["job_id"], {"job_id": Key["job_id"]})
+            if UpdateExpression.startswith("ADD "):
+                nombre, valor_ref = UpdateExpression.removeprefix("ADD ").split()
+                if ConditionExpression:
+                    # Solo soporta el único patrón que usa el código real:
+                    # "attribute_not_exists(x) OR x < :max".
+                    if nombre in item and item[nombre] >= ExpressionAttributeValues[":max"]:
+                        raise ClientError(
+                            {"Error": {"Code": "ConditionalCheckFailedException",
+                                      "Message": "The conditional request failed"}},
+                            "UpdateItem")
+                item[nombre] = item.get(nombre, 0) + ExpressionAttributeValues[valor_ref]
+                return
             asignaciones = UpdateExpression.removeprefix("SET ").split(",")
             for asignacion in asignaciones:
                 nombre, _, valor_ref = asignacion.strip().partition("=")
@@ -131,6 +144,29 @@ def test_procesar_dos_veces_falla(client):
     client.post(f"/api/audits/{job_id}/procesar")
     respuesta = client.post(f"/api/audits/{job_id}/procesar")
     assert respuesta.status_code == 409
+
+
+def test_procesar_respeta_limite_de_usos(client, monkeypatch):
+    monkeypatch.setenv("MAX_AUDIT_USES", "1")
+    primero = client.post("/api/audits", json={"filename": "aviso.pdf"}).json()["job_id"]
+    assert client.post(f"/api/audits/{primero}/procesar").status_code == 202
+
+    segundo = client.post("/api/audits", json={"filename": "otro.pdf"}).json()["job_id"]
+    respuesta = client.post(f"/api/audits/{segundo}/procesar")
+    assert respuesta.status_code == 429
+    # El job se quedó en PENDIENTE -- no se encoló ni se marcó PROCESANDO.
+    assert client.tabla.items[segundo]["state"] == "PENDIENTE"
+    assert client.sqs_enviados == [{"job_id": primero}]
+
+
+def test_crear_auditoria_no_consume_el_limite_solo_procesarla(client, monkeypatch):
+    monkeypatch.setenv("MAX_AUDIT_USES", "1")
+    # Crear varios jobs sin procesarlos no debe agotar el cupo: el costo
+    # real (worker + LLM) solo se compromete al encolar.
+    for _ in range(5):
+        client.post("/api/audits", json={"filename": "aviso.pdf"})
+    job_id = client.post("/api/audits", json={"filename": "aviso.pdf"}).json()["job_id"]
+    assert client.post(f"/api/audits/{job_id}/procesar").status_code == 202
 
 
 def test_estado_de_job_inexistente_es_404(client):

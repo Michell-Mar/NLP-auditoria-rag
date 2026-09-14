@@ -55,7 +55,8 @@ def test_webapp_stack_has_bounded_concurrency_and_no_new_public_surface():
     template.has_resource_properties("AWS::SQS::Queue",
         Match.object_like({"RedrivePolicy": Match.object_like({"maxReceiveCount": 2})}))
     template.has_resource_properties("AWS::Lambda::Function",
-        Match.object_like({"Timeout": 29, "PackageType": "Image"}))  # ApiFn: límite real de HTTP API
+        Match.object_like({"Timeout": 29, "PackageType": "Image",
+            "Environment": {"Variables": Match.object_like({"MAX_AUDIT_USES": "10"})}}))  # ApiFn: límite real de HTTP API + tope de usos por default
     template.has_resource_properties("AWS::Lambda::Function",
         Match.object_like({"Timeout": 900, "PackageType": "Image"}))  # QueueWorkerFn
     template.resource_count_is("AWS::EC2::NatGateway", 0)

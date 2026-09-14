@@ -27,6 +27,7 @@ from datetime import datetime
 from xml.sax.saxutils import escape as xml_escape
 
 import boto3
+from botocore.exceptions import ClientError
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse, HTMLResponse, Response
 from mangum import Mangum
@@ -43,6 +44,9 @@ STATIC_DIR = Path(__file__).resolve().parent / "static"
 MAX_PDF_BYTES = 10 * 1024 * 1024
 UPLOAD_URL_TTL_SECONDS = 900
 JOB_TTL_DAYS = 7
+# Item reservado en la misma tabla de Jobs para el contador global de usos --
+# nunca puede colisionar con un job_id real (uuid4().hex, siempre 32 hex).
+USO_COUNTER_KEY = "__uso_contador__"
 
 app = FastAPI(title="Auditor de Avisos de Privacidad (serverless)")
 
@@ -76,6 +80,41 @@ def _informe_de(item: dict) -> dict:
     if informe is None:
         raise HTTPException(409, "La auditoría todavía no tiene un resultado disponible.")
     return json.loads(informe)
+
+
+def _limite_auditorias() -> int:
+    return int(os.environ.get("MAX_AUDIT_USES", "10"))
+
+
+def _registra_uso() -> None:
+    """Incrementa el contador global de usos de forma atómica y rechaza la
+    solicitud si ya se alcanzó el tope. Se llama al ENCOLAR la auditoría
+    (no al crearla), porque ese es el momento en que de verdad se compromete
+    el costo real (worker Lambda + llamadas al LLM) -- crear un job sin
+    llegar a procesarlo (p. ej. el usuario nunca sube el PDF) no debería
+    consumir el cupo.
+
+    El ConditionExpression hace que el incremento y la verificación del tope
+    sean una sola operación atómica en DynamoDB: bajo solicitudes
+    concurrentes, nunca se puede rebasar el límite por una condición de
+    carrera (dos requests leyendo el mismo valor antes de que ninguna escriba).
+    """
+    limite = _limite_auditorias()
+    try:
+        _tabla().update_item(
+            Key={"job_id": USO_COUNTER_KEY},
+            UpdateExpression="ADD contador :uno",
+            ConditionExpression="attribute_not_exists(contador) OR contador < :max",
+            ExpressionAttributeValues={":uno": 1, ":max": limite},
+        )
+    except ClientError as exc:
+        if exc.response["Error"]["Code"] == "ConditionalCheckFailedException":
+            raise HTTPException(
+                429,
+                f"Se alcanzó el límite de {limite} auditorías disponibles en esta demo. "
+                "Contacta al administrador si necesitas más.",
+            )
+        raise
 
 
 # --------------------------------------------------------------------------
@@ -357,6 +396,7 @@ def procesar_auditoria(job_id: str) -> dict:
     item = _obtiene_job(job_id)
     if item["state"] != "PENDIENTE":
         raise HTTPException(409, f"La auditoría ya está en estado {item['state']}.")
+    _registra_uso()
     _sqs().send_message(QueueUrl=os.environ["JOBS_QUEUE_URL"],
                         MessageBody=json.dumps({"job_id": job_id}))
     _tabla().update_item(Key={"job_id": job_id}, UpdateExpression="SET #s = :s",

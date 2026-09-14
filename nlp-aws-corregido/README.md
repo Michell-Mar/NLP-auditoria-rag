@@ -133,6 +133,7 @@ npx cdk deploy WebappStack -c openaiSecretArn="$NLP_SECRET_ARN" \
   -c auditFunctionName="<FunctionName del paso 4>" \
   -c auditInputBucket="<InputBucket del paso 4>" \
   -c auditResultBucket="<ResultBucket del paso 4>" \
+  -c maxAuditUses=10 \
   --outputs-file cdk-outputs-webapp.json
 ```
 
@@ -141,6 +142,21 @@ repo** (ya está en `.gitignore`; contiene la URL pública y nombres de recursos
 Detalles, límites conocidos y cómo probarla en
 [docs/webapp.md](docs/webapp.md) / [docs/webapp-pdf.md](docs/webapp-pdf.md) /
 [docs/webapp-serverless.md](docs/webapp-serverless.md).
+
+**Tope de usos del link público.** `-c maxAuditUses` (default `10` si se omite) limita cuántas
+auditorías se pueden **encolar** desde que se despliega en adelante — no es retroactivo ni por
+periodo, es un contador acumulado que vive en un item aparte de la tabla `Jobs` de DynamoDB
+(`__uso_contador__`). El incremento y la verificación del tope son una sola operación atómica
+(`ConditionExpression` de DynamoDB), así que no se puede rebasar por solicitudes concurrentes.
+Al llegar al tope, `POST /api/audits/{id}/procesar` responde `429` con un mensaje claro; crear
+una auditoría (subir el PDF) no consume el cupo por sí solo, solo encolarla para procesarse.
+Para consultar cuántos usos van sin entrar a la consola de AWS:
+
+```bash
+python scripts/consultar_uso.py --profile nlp-dev --region us-east-1
+```
+
+Para subir el tope sin resetear el contador, vuelve a desplegar con un `-c maxAuditUses` mayor.
 
 ### 7. Eliminar todo
 
